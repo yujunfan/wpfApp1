@@ -6,27 +6,69 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using WpfApp1.window;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using WpfApp1;
+
+
+public class YourViewModel : INotifyPropertyChanged
+{
+    private string _currentButton;
+
+    public string CurrentButton
+    {
+        get { return _currentButton; }
+        set
+        {
+            if (_currentButton != value)
+            {
+                _currentButton = value;
+                OnPropertyChanged("CurrentButton");
+            }
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+
+public class DataContextWrapper
+{
+    public MainWindow Window { get; set; }
+    public YourViewModel ViewModel { get; set; }
+}
 
 namespace WpfApp1
 {
+
+
+
+
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
     public partial class MainWindow : Window
     {
+        private YourViewModel viewModel;
         public MainWindow()
         {
            InitializeComponent();
             MainFrame.NavigationService.Navigate(new Page2());
+            // 创建 ViewModel 实例并作为窗口的数据上下文
+            viewModel = new YourViewModel();
+
+            viewModel.CurrentButton = "hahah";
+
+            this.DataContext = viewModel;
+
         }
-   
+
+
         private void OpenDialogButton_Click(object sender, RoutedEventArgs e)
         {
             // 创建并显示对话框
@@ -49,15 +91,21 @@ namespace WpfApp1
         {
             Button button = (Button)sender;
             string value = button.Tag.ToString(); // 获取传递的值
+            
             switch (value)
             {
                 case "page1":
+                    viewModel.CurrentButton = "New Value";
+     
                     MainFrame.NavigationService.Navigate(new Page1());
                     break;
                 case "page2":
+                    viewModel.CurrentButton = "page2";
+
                     MainFrame.NavigationService.Navigate(new Page2());
                     break;
                 default:
+                    viewModel.CurrentButton = "page3";
                     MainFrame.NavigationService.Navigate(new Page3());
                     break;
             }
