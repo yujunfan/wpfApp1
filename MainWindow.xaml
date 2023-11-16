@@ -3,29 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-    
+        xmlns:local="clr-namespace:WpfApp1"  
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="10" >
-
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-
-        <!-- 在窗口中添加一个 Frame 控件用于加载页面 -->
-        <Frame x:Name="MainFrame" Grid.Column="1"   NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated_1" RenderTransformOrigin="0.186,0.512" />
-        <StackPanel  Grid.Column="0" >
-            <Button Content="page1" Tag="page1" Click="Button_Click" Padding="6"  Background="{Binding Button1Color}"  Margin="16,16,16,16"/>
-            <Button Content="page2" Tag="page2"  Click="Button_Click"  Padding="6" Background="{Binding Button2Color}"  Margin="16,16,16,16" />
-            <Button Content="page3" Tag="page3" Click="Button_Click"  Padding="6" Background="{Binding Button3Color}"  Margin="16,16,16,16" />
-            <Label Content="{Binding CurrentButton}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label Content="{Binding Button1Color}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </StackPanel>
-
-
+        <Frame x:Name="MainFrame" Grid.Column="1"   NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated_1"  />
     </Grid>
 </Window>

@@ -7,10 +7,42 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.Resources>
+
+
+            <Style x:Key="ContentCtrl" TargetType="{x:Type ContentControl}">
+                <Setter Property="Background" Value="Red"/>
+                <Setter Property="Foreground" Value="Green"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ContentControl}">
+                            <Grid>
+                                <!--Keep the Ellipse a circle when ContentControl.Width
+                    is set.-->
+                                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Width}"
+                         Fill="{TemplateBinding Background}"/>
+                                <ContentPresenter VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <DataTemplate x:Key="Template1">
+                <TextBlock Text="{Binding}" FontSize="12" FontWeight="Bold" TextWrapping="Wrap" />
+            </DataTemplate>
+
+        </Grid.Resources>
+
         <StackPanel  Grid.Column="0" >
             <Button Content="page1" Tag="page1" Click="Button_Click" Padding="6"    Margin="16,16,16,16"/>
             <Button Content="page2" Tag="page2"  Click="Button_Click"  Padding="6"   Margin="16,16,16,16" />
             <Button Content="page3" Tag="page3" Click="Button_Click"  Padding="6"    Margin="16,16,16,16" />
+            <TextBlock Text="{Binding Username}" Margin="5"/>
         </StackPanel>
     </Grid>
 </UserControl>

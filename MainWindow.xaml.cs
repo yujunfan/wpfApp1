@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using WpfApp1;
+using WpfApp1.window.layout;
 
 
 public class YourViewModel : INotifyPropertyChanged
@@ -58,7 +59,7 @@ namespace WpfApp1
         public MainWindow()
         {
            InitializeComponent();
-            MainFrame.NavigationService.Navigate(new Page2());
+            MainFrame.NavigationService.Navigate(new Layout());
             // 创建 ViewModel 实例并作为窗口的数据上下文
             viewModel = new YourViewModel();
 
@@ -87,30 +88,6 @@ namespace WpfApp1
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender;
-            string value = button.Tag.ToString(); // 获取传递的值
-            
-            switch (value)
-            {
-                case "page1":
-                    viewModel.CurrentButton = "New Value";
-     
-                    MainFrame.NavigationService.Navigate(new Page1());
-                    break;
-                case "page2":
-                    viewModel.CurrentButton = "page2";
 
-                    MainFrame.NavigationService.Navigate(new Page2());
-                    break;
-                default:
-                    viewModel.CurrentButton = "page3";
-                    MainFrame.NavigationService.Navigate(new Page3());
-                    break;
-            }
-                 
-           
-        }
     }
 }
