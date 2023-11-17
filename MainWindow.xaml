@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:WpfApp1"  
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <!--A Style that affects all TextBlocks-->
+        <Style x:Key="TitleText" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+    </Window.Resources>
     <Grid Margin="10" >
-        <Frame x:Name="MainFrame" Grid.Column="1"   NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated_1"  />
+        <Frame x:Name="MainFrame"  Grid.Row="1"  NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated_1"  />
     </Grid>
 </Window>

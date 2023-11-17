@@ -13,16 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-
-namespace WpfApp1.window
+namespace WpfApp1.window.dataBind.addList
 {
     /// <summary>
-    /// Page1.xaml 的交互逻辑
+    /// addList.xaml 的交互逻辑
     /// </summary>
-    public partial class Page1 : Page
+    public partial class addList : Page
     {
-        public Page1()
+        public addList()
         {
             InitializeComponent();
         }

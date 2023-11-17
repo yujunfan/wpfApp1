@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.window;
+using WpfApp1.window.dataBind.addList;
 
 namespace WpfApp1.window.layout
 {
@@ -37,6 +38,9 @@ namespace WpfApp1.window.layout
                     break;
                 case "page2":
                     SubFrame.NavigationService.Navigate(new Page2());
+                    break;
+                case "addList":
+                    SubFrame.NavigationService.Navigate(new addList());
                     break;
                 default:
                     SubFrame.NavigationService.Navigate(new Page3());
