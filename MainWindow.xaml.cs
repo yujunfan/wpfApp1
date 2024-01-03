@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using WpfApp1;
 using WpfApp1.window.layout;
+using MahApps.Metro.Controls;
 
 
 public class YourViewModel : INotifyPropertyChanged
@@ -53,12 +54,12 @@ namespace WpfApp1
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         private YourViewModel viewModel;
         public MainWindow()
         {
-           InitializeComponent();
+            InitializeComponent();
             MainFrame.NavigationService.Navigate(new Layout());
             // 创建 ViewModel 实例并作为窗口的数据上下文
             viewModel = new YourViewModel();

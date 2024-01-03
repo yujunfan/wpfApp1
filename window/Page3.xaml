@@ -9,6 +9,8 @@
       Title="Page3">
 
     <Grid>
-        <TextBlock Text="Hello World  page 3"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
+        <Canvas Name="myCanvas" Margin="-14,0,0,10" Width="400" Height="450" VerticalAlignment="Bottom">
+            <Image Name="displayImage" RenderOptions.BitmapScalingMode="LowQuality" UseLayoutRounding="True"  />
+        </Canvas>
     </Grid>
 </Page>
