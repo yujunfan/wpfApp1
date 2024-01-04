@@ -70,6 +70,16 @@ namespace WpfApp1
 
         }
 
+        private void LaunchGitHubSite(object sender, RoutedEventArgs e)
+        {
+            // Launch the GitHub site...
+        }
+
+        private void DeployCupCakes(object sender, RoutedEventArgs e)
+        {
+            // deploy some CupCakes...
+        }
+
 
         private void OpenDialogButton_Click(object sender, RoutedEventArgs e)
         {
