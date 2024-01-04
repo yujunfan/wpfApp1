@@ -12,6 +12,7 @@ using System.ComponentModel;
 using WpfApp1;
 using WpfApp1.window.layout;
 using MahApps.Metro.Controls;
+using WpfApp1.window.dataBind.addList;
 
 
 public class YourViewModel : INotifyPropertyChanged
@@ -57,10 +58,12 @@ namespace WpfApp1
     public partial class MainWindow : MetroWindow
     {
         private YourViewModel viewModel;
+        string path = string.Empty;
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.NavigationService.Navigate(new Layout());
+            SubFrame.Navigate(new Page1());
+            //  MainFrame.NavigationService.Navigate(new Layout());
             // 创建 ViewModel 实例并作为窗口的数据上下文
             viewModel = new YourViewModel();
 
@@ -68,6 +71,28 @@ namespace WpfApp1
 
             this.DataContext = viewModel;
 
+        }
+
+        public void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string value = button.Tag.ToString(); // 获取传递的值
+            switch (value)
+            {
+                case "page1":
+                    SubFrame.NavigationService.Navigate(new Page1());
+                    break;
+                case "page2":
+                    SubFrame.NavigationService.Navigate(new Page2());
+                    break;
+                case "addList":
+                    SubFrame.NavigationService.Navigate(new addList());
+                    break;
+                default:
+                    SubFrame.NavigationService.Navigate(new Page3());
+                    break;
+            }
+            //MyClick?.Invoke(value);
         }
 
         private void LaunchGitHubSite(object sender, RoutedEventArgs e)
@@ -98,6 +123,8 @@ namespace WpfApp1
         {
 
         }
+
+ 
 
 
     }

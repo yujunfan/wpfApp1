@@ -1,23 +1,41 @@
 ﻿<mah:MetroWindow x:Class="WpfApp1.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"  
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        mc:Ignorable="d"
-                 ResizeMode="CanResizeWithGrip"
-                 WindowStartupLocation="CenterScreen"         
-        Title="MainWindow" Height="450" Width="800">
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WpfApp1"  
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    SaveWindowPosition="True"
+    mc:Ignorable="d"
+    ResizeMode="CanResizeWithGrip"
+    WindowStartupLocation="CenterScreen"
+    ShowIconOnTitleBar="True"
+     Height="450" Width="800"
+>
+
+    <mah:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <iconPacks:PackIconUnicons Kind="BatteryBolt" 
+                                       Width="30" 
+                                       Height="30"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="4"
+                                       Foreground="{DynamicResource MahApps.Brushes.IdealForeground}"/>
+        </DataTemplate>
+    </mah:MetroWindow.IconTemplate>
+
     <mah:MetroWindow.LeftWindowCommands>
         <mah:WindowCommands>
-            <Button Click="LaunchGitHubSite" ToolTip="Open up the GitHub site">
-                <iconPacks:PackIconModern Width="22"
-                                  Height="22"
-                                  Kind="SocialGithubOctocat" />
-            </Button>
+            <mah:WindowCommands ShowLastSeparator="False">
+                <Button Content="page1" Tag="page1" Click="Button_Click" />
+                <Button Content="page2" Tag="page2"  Click="Button_Click"  />
+                <Button Content="page3" Tag="page3" Click="Button_Click"  />
+                <Button Content="addList" Tag="addList" Click="Button_Click"  />
+                <Button Content="汉堡布局" Tag="hb" Click="Button_Click"  />
+            </mah:WindowCommands>
         </mah:WindowCommands>
     </mah:MetroWindow.LeftWindowCommands>
 
@@ -41,6 +59,6 @@
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
     <Grid Margin="10" >
-        <Frame x:Name="MainFrame"  Grid.Row="1"  NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated_1"  />
+        <Frame x:Name="SubFrame" Grid.Column="1"   NavigationUIVisibility="Hidden"   />
     </Grid>
 </mah:MetroWindow>
