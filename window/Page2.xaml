@@ -56,5 +56,6 @@
             <Button Name="okButton" Click="okButton_Click" IsDefault="True">OK</Button>
             <Button Name="cancelButton" IsCancel="True">Cancel</Button>
         </StackPanel>
+        <Label Grid.Column="1" Content="Label" HorizontalAlignment="Left" Margin="89,102,0,0" Grid.Row="5" VerticalAlignment="Top"/>
     </Grid >
 </Page>

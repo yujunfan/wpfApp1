@@ -178,6 +178,10 @@
     <Compile Include="window\layout\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="window\Mvvm\BindableBase.cs" />
+    <Compile Include="window\Mvvm\DelegateCommand.cs" />
+    <Compile Include="window\Navigation\FrameAnimator.cs" />
+    <Compile Include="window\Navigation\NavigationServiceEx.cs" />
     <Compile Include="window\Place.cs" />
     <Compile Include="window\Places.cs" />
     <Compile Include="window\Page1.xaml.cs">
@@ -191,6 +195,29 @@
     </Compile>
     <Compile Include="window\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\ViewModels\MenuItem.cs" />
+    <Compile Include="window\ViewModels\ShellViewModel.cs" />
+    <Compile Include="window\Views\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\AwesomePage.xaml.cs">
+      <DependentUpon>AwesomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\BreakPage.xaml.cs">
+      <DependentUpon>BreakPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\BugsPage.xaml.cs">
+      <DependentUpon>BugsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="window\Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
@@ -235,6 +262,34 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="window\Views\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\AwesomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\BreakPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\BugsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="window\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -270,6 +325,12 @@
   <ItemGroup>
     <Folder Include="style&amp;templates\" />
     <Folder Include="window\element\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Photos\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Photos\2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

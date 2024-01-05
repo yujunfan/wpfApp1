@@ -58,7 +58,7 @@
             </Button>
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
-    <Grid Margin="10" >
+    <Grid Margin="0" >
         <Frame x:Name="SubFrame" Grid.Column="1"   NavigationUIVisibility="Hidden"   />
     </Grid>
 </mah:MetroWindow>
