@@ -11,7 +11,9 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using WpfApp1;
 using WpfApp1.window.layout;
+using WpfApp1.window.Views;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using WpfApp1.window.dataBind.addList;
 
 
@@ -68,10 +70,12 @@ namespace WpfApp1
             viewModel = new YourViewModel();
 
             viewModel.CurrentButton = "hahah";
-
+    
             this.DataContext = viewModel;
 
         }
+
+    
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -85,8 +89,8 @@ namespace WpfApp1
                 case "page2":
                     SubFrame.NavigationService.Navigate(new Page2());
                     break;
-                case "addList":
-                    SubFrame.NavigationService.Navigate(new addList());
+                case "hblayout":
+                    SubFrame.NavigationService.Navigate(new HBLayout());
                     break;
                 default:
                     SubFrame.NavigationService.Navigate(new Page3());
@@ -124,7 +128,7 @@ namespace WpfApp1
 
         }
 
- 
+
 
 
     }

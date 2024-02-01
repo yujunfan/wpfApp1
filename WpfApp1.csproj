@@ -210,6 +210,15 @@
     <Compile Include="window\Views\BugsPage.xaml.cs">
       <DependentUpon>BugsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="window\Views\DataBind.xaml.cs">
+      <DependentUpon>DataBind.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\Demo1.xaml.cs">
+      <DependentUpon>Demo1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\HBLayout.xaml.cs">
+      <DependentUpon>HBLayout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="window\Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -275,6 +284,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="window\Views\BugsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\DataBind.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\Demo1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\HBLayout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

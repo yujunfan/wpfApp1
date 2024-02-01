@@ -8,7 +8,7 @@ namespace WpfApp1.window.ViewModels
 {
     public class ShellViewModel : BindableBase
     {
-        public ObservableCollection<MenuItem> Menu { get; } =  new ObservableCollection<MenuItem>();
+        public ObservableCollection<MenuItem> Menu { get; } = new ObservableCollection<MenuItem>();
 
         public ObservableCollection<MenuItem> OptionsMenu { get; } = new ObservableCollection<MenuItem>();
 
@@ -18,9 +18,9 @@ namespace WpfApp1.window.ViewModels
             this.Menu.Add(new MenuItem()
             {
                 Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.BugSolid },
-                Label = "Bugs",
-                NavigationType = typeof(BugsPage),
-                NavigationDestination = new Uri("window/Views/BugsPage.xaml", UriKind.RelativeOrAbsolute)
+                Label = "数据绑定",
+                NavigationType = typeof(DataBind),
+                NavigationDestination = new Uri("window/Views/DataBind.xaml", UriKind.RelativeOrAbsolute)
             });
             this.Menu.Add(new MenuItem()
             {
