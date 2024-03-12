@@ -8,14 +8,25 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BreakPage">
-
     <Grid>
-        <iconPacks:PackIconIonicons Width="48"
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <WrapPanel Orientation="Vertical" Margin="16">
+                <iconPacks:PackIconIonicons Width="48"
                                        Height="48"
                                        Margin="10"
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Top"
                                        Foreground="{DynamicResource MahApps.Brushes.AccentBase}"
                                         />
+                <Button Click="ReadAndUpdateOrCreateFileButton_Click" Content="文件读取"/>
+                <Button Click="ReadAndUpdateOrCreateFileButton_Click" Content="文件更新"/>
+                <Label Name="a0" Content="Label1"/>
+                <Label Name="a1" Content="Label2"/>
+                <Label Name="a2" Content="Label3"/>
+                <Label Name="a3" Content="Label4"/>
+                <Label Name="a4" Content="Label5"/>
+                <Label Name="a5" Content="Label6"/>
+            </WrapPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

@@ -39,7 +39,7 @@
         </Grid.RowDefinitions>
 
         <!-- Left,Top,Right,Bottom margins-->
-        <Label Grid.Column="0" Grid.Row="0">Left Margin:</Label>
+        <Label Grid.Column="0" Grid.Row="0">Left Margin * :</Label>
         <TextBox Name="leftMarginTextBox" Grid.Column="1" Grid.Row="0" />
 
         <Label Grid.Column="0" Grid.Row="1">Top Margin:</Label>

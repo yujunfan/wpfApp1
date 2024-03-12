@@ -25,14 +25,14 @@ namespace WpfApp1.window.ViewModels
             this.Menu.Add(new MenuItem()
             {
                 Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.UserSolid },
-                Label = "User",
+                Label = "mahAppsUI",
                 NavigationType = typeof(UserPage),
-                NavigationDestination = new Uri("window/Views/UserPage.xaml", UriKind.RelativeOrAbsolute)
+                NavigationDestination = new Uri("window/Views/UI/BaseUI.xaml", UriKind.RelativeOrAbsolute)
             });
             this.Menu.Add(new MenuItem()
             {
                 Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.CoffeeSolid },
-                Label = "Break",
+                Label = "文件操作",
                 NavigationType = typeof(BreakPage),
                 NavigationDestination = new Uri("window/Views/BreakPage.xaml", UriKind.RelativeOrAbsolute)
             });

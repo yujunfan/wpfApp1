@@ -15,6 +15,7 @@ using WpfApp1.window.Views;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using WpfApp1.window.dataBind.addList;
+using WpfApp1.window.Views.curd;
 
 
 public class YourViewModel : INotifyPropertyChanged
@@ -70,12 +71,12 @@ namespace WpfApp1
             viewModel = new YourViewModel();
 
             viewModel.CurrentButton = "hahah";
-    
+
             this.DataContext = viewModel;
 
         }
 
-    
+
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -87,7 +88,7 @@ namespace WpfApp1
                     SubFrame.NavigationService.Navigate(new Page1());
                     break;
                 case "page2":
-                    SubFrame.NavigationService.Navigate(new Page2());
+                    SubFrame.NavigationService.Navigate(new Curd());
                     break;
                 case "hblayout":
                     SubFrame.NavigationService.Navigate(new HBLayout());

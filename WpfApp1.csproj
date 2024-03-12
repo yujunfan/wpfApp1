@@ -172,6 +172,7 @@
     <Compile Include="window\dataBind\addList\addList.xaml.cs">
       <DependentUpon>addList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="window\data\Persons.cs" />
     <Compile Include="window\layout\Layout.xaml.cs">
       <DependentUpon>Layout.xaml</DependentUpon>
     </Compile>
@@ -210,6 +211,9 @@
     <Compile Include="window\Views\BugsPage.xaml.cs">
       <DependentUpon>BugsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="window\Views\curd\Curd.xaml.cs">
+      <DependentUpon>Curd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="window\Views\DataBind.xaml.cs">
       <DependentUpon>DataBind.xaml</DependentUpon>
     </Compile>
@@ -224,6 +228,9 @@
     </Compile>
     <Compile Include="window\Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\UI\BaseUI.xaml.cs">
+      <DependentUpon>BaseUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="window\Views\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
@@ -287,6 +294,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="window\Views\curd\Curd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="window\Views\DataBind.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -304,6 +315,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="window\Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\UI\BaseUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
