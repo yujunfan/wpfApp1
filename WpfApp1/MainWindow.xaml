@@ -14,7 +14,6 @@
     ShowIconOnTitleBar="True"
      Height="450" Width="800"
 >
-
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconUnicons Kind="BatteryBolt" 
@@ -26,10 +25,10 @@
                                        Foreground="{DynamicResource MahApps.Brushes.IdealForeground}"/>
         </DataTemplate>
     </mah:MetroWindow.IconTemplate>
-
     <mah:MetroWindow.LeftWindowCommands>
         <mah:WindowCommands>
             <mah:WindowCommands ShowLastSeparator="False">
+                <Button Content="表格" Tag="table" Click="Button_Click" />
                 <Button Content="page1" Tag="page1" Click="Button_Click" />
                 <Button Content="增删改查" Tag="page2"  Click="Button_Click"  />
                 <Button Content="page3" Tag="page3" Click="Button_Click"  />
@@ -37,7 +36,6 @@
             </mah:WindowCommands>
         </mah:WindowCommands>
     </mah:MetroWindow.LeftWindowCommands>
-
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
             <Button Click="DeployCupCakes" Content="Deploy CupCakes">

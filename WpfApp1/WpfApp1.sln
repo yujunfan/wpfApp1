@@ -5,6 +5,12 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1.csproj", "{7EA2F45F-F0A7-4F22-92EE-7C4D589D4789}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "service", "service", "{C6E36E38-E667-4F42-9165-8B07283B8CD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "..\Service\Service.csproj", "{9B4001CD-6B73-4048-92BE-A27EB8E7234B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TService", "..\TService\TService.csproj", "{450573CA-EF26-42EC-B23C-2765A8227464}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,14 @@ Global
 		{7EA2F45F-F0A7-4F22-92EE-7C4D589D4789}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EA2F45F-F0A7-4F22-92EE-7C4D589D4789}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EA2F45F-F0A7-4F22-92EE-7C4D589D4789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B4001CD-6B73-4048-92BE-A27EB8E7234B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4001CD-6B73-4048-92BE-A27EB8E7234B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4001CD-6B73-4048-92BE-A27EB8E7234B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B4001CD-6B73-4048-92BE-A27EB8E7234B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450573CA-EF26-42EC-B23C-2765A8227464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450573CA-EF26-42EC-B23C-2765A8227464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450573CA-EF26-42EC-B23C-2765A8227464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450573CA-EF26-42EC-B23C-2765A8227464}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

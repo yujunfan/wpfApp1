@@ -84,6 +84,9 @@ namespace WpfApp1
             string value = button.Tag.ToString(); // 获取传递的值
             switch (value)
             {
+                case "table":
+                    SubFrame.NavigationService.Navigate(new Table());
+                    break;
                 case "page1":
                     SubFrame.NavigationService.Navigate(new Page1());
                     break;
