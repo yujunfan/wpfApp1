@@ -16,6 +16,7 @@ using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using WpfApp1.window.dataBind.addList;
 using WpfApp1.window.Views.curd;
+using WpfApp1.window.Views.mysql;
 
 
 public class YourViewModel : INotifyPropertyChanged
@@ -84,6 +85,12 @@ namespace WpfApp1
             string value = button.Tag.ToString(); // 获取传递的值
             switch (value)
             {
+                case "ThreeD":
+                    SubFrame.NavigationService.Navigate(new WpfApp1.window.Views.ZJ.ThreeD());
+                    break;
+                case "SQLCurd":
+                    SubFrame.NavigationService.Navigate(new Sql_CURD());
+                    break;
                 case "table":
                     SubFrame.NavigationService.Navigate(new Table());
                     break;
@@ -91,7 +98,7 @@ namespace WpfApp1
                     SubFrame.NavigationService.Navigate(new Page1());
                     break;
                 case "page2":
-                    SubFrame.NavigationService.Navigate(new Curd());
+                    SubFrame.NavigationService.Navigate(new WpfApp1.window.Views.curd.Curd());
                     break;
                 case "hblayout":
                     SubFrame.NavigationService.Navigate(new HBLayout());

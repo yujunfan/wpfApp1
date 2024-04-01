@@ -249,6 +249,12 @@
     <Compile Include="window\Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="window\Views\mysql\Curd.xaml.cs">
+      <DependentUpon>Curd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\mysql\Sql_CURD.xaml.cs">
+      <DependentUpon>Sql_CURD.xaml</DependentUpon>
+    </Compile>
     <Compile Include="window\Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -260,6 +266,9 @@
     </Compile>
     <Compile Include="window\Views\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="window\Views\ZJ\ThreeD.xaml.cs">
+      <DependentUpon>ThreeD.xaml</DependentUpon>
     </Compile>
     <Compile Include="window\Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
@@ -344,6 +353,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="window\Views\mysql\Curd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\mysql\Sql_CURD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="window\Views\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -357,6 +374,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="window\Views\UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\Views\ZJ\ThreeD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

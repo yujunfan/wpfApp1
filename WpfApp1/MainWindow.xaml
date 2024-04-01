@@ -28,6 +28,8 @@
     <mah:MetroWindow.LeftWindowCommands>
         <mah:WindowCommands>
             <mah:WindowCommands ShowLastSeparator="False">
+                <Button Content="伤损3D" Tag="ThreeD" Click="Button_Click" />
+                <Button Content="数据库操作" Tag="SQLCurd" Click="Button_Click" />
                 <Button Content="表格" Tag="table" Click="Button_Click" />
                 <Button Content="page1" Tag="page1" Click="Button_Click" />
                 <Button Content="增删改查" Tag="page2"  Click="Button_Click"  />
