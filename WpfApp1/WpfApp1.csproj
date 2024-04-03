@@ -188,7 +188,6 @@
     </ApplicationDefinition>
     <Compile Include="ButtonColorConverter.cs" />
     <Compile Include="Global\UserInfo.cs" />
-    <Compile Include="Service\MySqlLite.cs" />
     <Compile Include="window\controls\MessageBox\Message.xaml.cs">
       <DependentUpon>Message.xaml</DependentUpon>
     </Compile>
@@ -425,10 +424,6 @@
     <Resource Include="Assets\Photos\2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Service\Service.csproj">
-      <Project>{9b4001cd-6b73-4048-92be-a27eb8e7234b}</Project>
-      <Name>Service</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TService\TService.csproj">
       <Project>{450573ca-ef26-42ec-b23c-2765a8227464}</Project>
       <Name>TService</Name>
