@@ -10,7 +10,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using WpfApp1;
-using WpfApp1.window.layout;
 using WpfApp1.window.Views;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
@@ -106,13 +105,7 @@ namespace WpfApp1
         }
 
 
-        private void OpenDialogButton_Click(object sender, RoutedEventArgs e)
-        {
-            // 创建并显示对话框
-            var dialog = new Window1(); // MyDialog 是你自定义的对话框窗口
-            dialog.Owner = this; // 将主窗口设置为对话框的 Owner，这会使对话框在主窗口上方显示，并将其设为模态
-            dialog.ShowDialog(); // 显示对话框，代码会暂停直到对话框关闭为止
-        }
+
 
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {

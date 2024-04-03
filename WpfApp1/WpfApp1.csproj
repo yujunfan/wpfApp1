@@ -195,19 +195,10 @@
       <DependentUpon>addList.xaml</DependentUpon>
     </Compile>
     <Compile Include="window\data\Persons.cs" />
-    <Compile Include="window\layout\Layout.xaml.cs">
-      <DependentUpon>Layout.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="window\layout\Menu.xaml.cs">
-      <DependentUpon>Menu.xaml</DependentUpon>
-    </Compile>
     <Compile Include="window\Mvvm\BindableBase.cs" />
     <Compile Include="window\Mvvm\DelegateCommand.cs" />
     <Compile Include="window\Navigation\FrameAnimator.cs" />
     <Compile Include="window\Navigation\NavigationServiceEx.cs" />
-    <Compile Include="window\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="window\ViewModels\MenuItem.cs" />
     <Compile Include="window\ViewModels\ShellViewModel.cs" />
     <Compile Include="window\Views\AboutPage.xaml.cs">
@@ -258,9 +249,6 @@
     <Compile Include="window\Views\ZJ\ThreeD.xaml.cs">
       <DependentUpon>ThreeD.xaml</DependentUpon>
     </Compile>
-    <Compile Include="window\Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -278,18 +266,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="window\dataBind\addList\addList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="window\layout\Layout.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="window\layout\Menu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="window\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -354,10 +330,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="window\Views\ZJ\ThreeD.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="window\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
