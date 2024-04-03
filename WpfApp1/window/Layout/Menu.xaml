@@ -36,12 +36,5 @@
             </ControlTemplate>
         </Grid.Resources>
 
-        <StackPanel  Grid.Column="0" >
-            <Button Template="{StaticResource roundbutton}" Width="65" Height="65" Content="page1" Tag="page1" Click="Button_Click" Padding="6"    Margin="16,16,16,16"/>
-            <Button Content="page2" Tag="page2"  Click="Button_Click"  Padding="6"   Margin="16,16,16,16" />
-            <Button Content="page3" Tag="page3" Click="Button_Click"  Padding="6"    Margin="16,16,16,16" />
-            <Button Content="addList" Tag="addList" Click="Button_Click"  Padding="6"    Margin="16,16,16,16" />
-            <TextBlock  Text="{Binding Username}" Margin="5"/>
-        </StackPanel>
     </Grid>
 </UserControl>

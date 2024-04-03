@@ -205,17 +205,6 @@
     <Compile Include="window\Mvvm\DelegateCommand.cs" />
     <Compile Include="window\Navigation\FrameAnimator.cs" />
     <Compile Include="window\Navigation\NavigationServiceEx.cs" />
-    <Compile Include="window\Place.cs" />
-    <Compile Include="window\Places.cs" />
-    <Compile Include="window\Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="window\Page2.xaml.cs">
-      <DependentUpon>Page2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="window\Page3.xaml.cs">
-      <DependentUpon>Page3.xaml</DependentUpon>
-    </Compile>
     <Compile Include="window\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
@@ -297,18 +286,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="window\layout\Menu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="window\Page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="window\Page2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="window\Page3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,28 +25,8 @@ namespace WpfApp1.window.layout
         public Layout()
         {
             InitializeComponent();
-            SubFrame.Navigate(new Page1());
         }
 
-        private void Button_Click(string value)
-        {
 
-            switch (value)
-            {
-                case "page1":
-                    SubFrame.NavigationService.Navigate(new Page1());
-                    break;
-                case "page2":
-                    SubFrame.NavigationService.Navigate(new Page2());
-                    break;
-                case "addList":
-                    SubFrame.NavigationService.Navigate(new addList());
-                    break;
-                default:
-                    SubFrame.NavigationService.Navigate(new Page3());
-                    break;
-            }
-
-        }
     }
 }

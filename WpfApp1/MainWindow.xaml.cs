@@ -66,7 +66,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            SubFrame.Navigate(new Page1());
+            SubFrame.Navigate(new HBLayout());
             //  MainFrame.NavigationService.Navigate(new Layout());
             // 创建 ViewModel 实例并作为窗口的数据上下文
             viewModel = new YourViewModel();
@@ -85,26 +85,11 @@ namespace WpfApp1
             string value = button.Tag.ToString(); // 获取传递的值
             switch (value)
             {
-                case "ThreeD":
-                    SubFrame.NavigationService.Navigate(new WpfApp1.window.Views.ZJ.ThreeD());
-                    break;
-                case "SQLCurd":
-                    SubFrame.NavigationService.Navigate(new Sql_CURD());
-                    break;
-                case "table":
-                    SubFrame.NavigationService.Navigate(new Table());
-                    break;
-                case "page1":
-                    SubFrame.NavigationService.Navigate(new Page1());
-                    break;
-                case "page2":
-                    SubFrame.NavigationService.Navigate(new WpfApp1.window.Views.curd.Curd());
-                    break;
                 case "hblayout":
                     SubFrame.NavigationService.Navigate(new HBLayout());
                     break;
                 default:
-                    SubFrame.NavigationService.Navigate(new Page3());
+                    SubFrame.NavigationService.Navigate(new HBLayout());
                     break;
             }
             //MyClick?.Invoke(value);
