@@ -33,7 +33,7 @@ namespace WpfApp1.window.Views
             this.HamburgerMenuControl.Content = this.navigationServiceEx.Frame;
 
             // Navigate to the home page.
-            this.Loaded += (sender, args) => this.navigationServiceEx.Navigate(new Uri("window/Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
+            this.Loaded += (sender, args) => this.navigationServiceEx.Navigate(new Uri("window/Views/Device/Device.xaml", UriKind.RelativeOrAbsolute));
         }
 
 

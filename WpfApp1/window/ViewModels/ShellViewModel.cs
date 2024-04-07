@@ -3,6 +3,9 @@ using System.Collections.ObjectModel;
 using MahApps.Metro.IconPacks;
 using MahAppsMetroHamburgerMenuNavigation.Mvvm;
 using WpfApp1.window.Views.UI;
+using WpfApp1.window.Views.Device;
+using WpfApp1.window.Views.File;
+using WpfApp1.window.Views.Task;
 
 namespace WpfApp1.window.ViewModels
 {
@@ -16,10 +19,24 @@ namespace WpfApp1.window.ViewModels
         {
             this.Menu.Add(new MenuItem()
             {
-                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.UserSolid },
-                Label = "mahAppsUI",
-                NavigationType = typeof(BaseUI),
-                NavigationDestination = new Uri("window/Views/UI/BaseUI.xaml", UriKind.RelativeOrAbsolute)
+                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.BluetoothBrands },
+                Label = "设备管理",
+                NavigationType = typeof(Device),
+                NavigationDestination = new Uri("window/Views/Device/Device.xaml", UriKind.RelativeOrAbsolute)
+            });
+            this.Menu.Add(new MenuItem()
+            {
+                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.FileSolid },
+                Label = "文件管理",
+                NavigationType = typeof(File),
+                NavigationDestination = new Uri("window/Views/File/File.xaml", UriKind.RelativeOrAbsolute)
+            });
+            this.Menu.Add(new MenuItem()
+            {
+                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.TasksSolid },
+                Label = "任务管理",
+                NavigationType = typeof(Task),
+                NavigationDestination = new Uri("window/Views/Task/Task.xaml", UriKind.RelativeOrAbsolute)
             });
 
 
