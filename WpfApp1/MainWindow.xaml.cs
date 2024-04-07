@@ -13,9 +13,6 @@ using WpfApp1;
 using WpfApp1.window.Views;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using WpfApp1.window.dataBind.addList;
-using WpfApp1.window.Views.curd;
-using WpfApp1.window.Views.mysql;
 
 
 public class YourViewModel : INotifyPropertyChanged
