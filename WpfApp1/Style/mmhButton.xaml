@@ -1,0 +1,112 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="BackgroundButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Cursor="Hand">
+                        <StackPanel>
+                            <ContentPresenter Content="" Height="200"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background"  Value="#F2F2F2" TargetName="border">
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="primaryOutlineButton" TargetType="Button">
+        <Setter Property="Height" Value="32"></Setter>
+        <Setter Property="Padding" Value="16 0"></Setter>
+        <Setter Property="Foreground" Value="#4E7CED"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Background" Value="#4E7CED"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Cursor="Hand" CornerRadius="3" BorderThickness="1" BorderBrush="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <ContentPresenter></ContentPresenter>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#6F94EF"></Setter>
+                            <Setter Property="Foreground" Value="#6F94EF"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="grayButton" TargetType="Button">
+        <Setter Property="Height" Value="32"></Setter>
+        <Setter Property="Padding" Value="16 0"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Background" Value="#949CAF"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Cursor="Hand" CornerRadius="3" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <ContentPresenter></ContentPresenter>
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#7C8393"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid x:Name="Root" Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" To="#4E7CED" Storyboard.TargetProperty="(Path.Stroke).Color" Storyboard.TargetName="UncheckedVisual"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To=".7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Unchecked"/>
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="UncheckedVisual"/>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CheckedVisual"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid HorizontalAlignment="Right" >
+                            <Path x:Name="UncheckedVisual" Data="M 0,0 L 0,12 L 7,6 Z"   Stroke="#4E7CED" StrokeThickness="1" VerticalAlignment="Center"/>
+                            <Path x:Name="CheckedVisual" Data="M 6,0 L 6,6 L 0,6.5 Z" Fill="#4E7CED" SnapsToDevicePixels="True" Stretch="UniformToFill"  HorizontalAlignment="Center" Height="10" Width="10" Opacity="0" StrokeLineJoin="Miter" VerticalAlignment="Center" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

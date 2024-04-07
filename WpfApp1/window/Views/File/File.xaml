@@ -4,11 +4,101 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp1.window.Views.File"
+      xmlns:vm="clr-namespace:WpfApp1.window.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="File">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/Bash.xaml"/>
+                <ResourceDictionary Source="/Style/Text.xaml"/>
+                <ResourceDictionary Source="/Style/MMH.xaml"/>
+                <ResourceDictionary Source="/Style/mmhButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Page.DataContext>
+        <vm:FlawDetectionData />
+    </Page.DataContext>
 
-    <Grid>
-        <TextBlock Text="文件管理" />
-    </Grid>
+    <Border Background="#fff" Padding="16">
+        <Grid Margin="0">
+            <Border>
+                <StackPanel Orientation="Vertical">
+                    <Border  Height="120" BorderBrush="#E2E5F4" BorderThickness="0,0,0,1">
+                        <Grid  >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="0.5*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+                                    <TextBlock Text="工务段：" Width="56" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
+                                    <ComboBox Name="cbbWorkSection" Width="140" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" ItemsSource="{Binding WorkSectionData}" Margin="0,15,0,0"  DisplayMemberPath="Name" SelectedValuePath="Id"/>
+                                    <TextBlock Text="线别：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
+                                    <ComboBox Name="cbbXianbie" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0,15,0,0" ItemsSource="{Binding Xianbie}"  DisplayMemberPath="Name" SelectedValuePath="Id"  />
+                                    <TextBlock Text="行   别："   Width="56" Style="{StaticResource TextBlockNormalStyle}" Height="22"  Margin="16,17,0,0"/>
+                                    <ComboBox Name="cbbXingBie"  Width="140" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" Margin="0,15,0,0" ItemsSource="{Binding Hangbie}" DisplayMemberPath="Name" SelectedValuePath="Id" />
+                                    <TextBlock Text="股别：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
+                                    <ComboBox  ItemsSource="{Binding Gubie}" DisplayMemberPath="Name" SelectedValuePath="Id" Name="cbbGuBie" Width="130" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}"  BorderThickness="1" Margin="0,15,0,0"   />
+                                    <TextBlock Text="线名：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
+                                    <ComboBox Name="cbbXianMing" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0,15,0,0" ItemsSource="{Binding Xianbie}"  DisplayMemberPath="Name" SelectedValuePath="Id"  />
+                                    <TextBlock Text="线编号：" Width="56" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
+                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="90" Height="32"  Margin="0 17 0 11">
+                                        <TextBox Name="txtRailwayLine"  Style="{StaticResource TextBoxCenterStyle}"/>
+                                    </Border>
+                                    <TextBlock Text="搜索时间：" Width="70" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
+                                    <ComboBox ItemsSource="{Binding TimeType}" DisplayMemberPath="Name" SelectedValuePath="Id" Name="cbbTimeType"  Width="130" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" Margin="0,15,0,0"/>
+                                    <Border BorderBrush="#C9CFE2 " BorderThickness="1" Width="120" Height="32" Margin="26,17,0,0" CornerRadius="3" >
+                                        <DatePicker Name="dpkTimeS" Width="88"  VerticalAlignment="Center" Language="zh" Height="32" Margin="4,-1" VerticalContentAlignment="Center" BorderBrush="#C9CFE2"/>
+                                    </Border>
+                                    <TextBlock Text="—" Width="6" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="2,17,0,0"/>
+                                    <Border Margin="2,15,0,0" Width="120" Height="32" BorderBrush="#C9CFE2 " BorderThickness="1" CornerRadius="3">
+                                        <DatePicker Name="dpkTimeE" Language="zh" Width="88"  VerticalAlignment="Stretch" Margin="-1" VerticalContentAlignment="Center" BorderBrush="#C9CFE2"/>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="状态:" Width="42" Style="{StaticResource TextBlockNormalStyle}" Margin="16,0,0,11" Height="16" />
+                                    <ComboBox Name="cbbIsSubmit" ItemsSource="{Binding Status}" DisplayMemberPath="Name" SelectedValuePath="Id" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0 0 0 11" />
+                                    <TextBlock Text="文件名：" Width="56" Style="{StaticResource TextBlockNormalStyle}" Height="19"  Margin="16,0,0,11"/>
+                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="285" Height="32"  Margin="0 0 0 11">
+                                        <TextBox Name="txtOriginalFileName" Style="{StaticResource TextBoxCenterStyle}" />
+                                    </Border>
+                                    <TextBlock Text="施工负责人：" Style="{StaticResource TextBlockNormalStyle}" Width="84" Height="19"  Margin="16,0,0,11"/>
+                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="130" Height="32"  Margin="0 0 0 11">
+                                        <TextBox Name="txtPrincipal"  Style="{StaticResource TextBoxCenterStyle}"/>
+                                    </Border>
+                                    <TextBlock Text="分析员：" Width="56" Height="19" Style="{StaticResource TextBlockNormalStyle}" Margin="16,0,0,11"/>
+                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="90" Height="32"  Margin="0 0 0 11">
+                                        <TextBox Name="txtAnalyst" Style="{StaticResource TextBoxCenterStyle}"  />
+                                    </Border>
+                                    <TextBlock Text="班组编号：" Width="70" Height="19" Style="{StaticResource TextBlockNormalStyle}" Margin="16,0,0,11"/>
+                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}"  Width="55" Height="32"  Margin="0 0 0 11">
+                                        <TextBox Name="txtWorkGroup" Style="{StaticResource TextBoxCenterStyle}"/>
+                                    </Border>
+                                    <TextBlock Text="里程：" Width="42" Height="19" Style="{StaticResource TextBlockNormalStyle}" Margin="16,0,0,11" Visibility="Visible"/>
+                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="55" Height="32"  Margin="0 0 0 11">
+                                        <TextBox Name="txtWorkMil" Width="55" Height="32" Style="{StaticResource TextBoxCenterStyle}" Visibility="Visible" />
+                                    </Border>
+                                    <!--Style="{StaticResource CancelButton}"-->
+                                    <!--Style="{StaticResource ConfirmButton}"-->
+                                    <Button x:Name="btnLearn" Content="学习文件" Style="{StaticResource primaryOutlineButton}"  Margin="8,-10,0,0"/>
+                                    <Button x:Name="btnReset" Content="重 置" Style="{StaticResource grayButton}" Margin="8,-10,0,0" />
+                                    <Button x:Name="btnSearch" Content="搜 索"  Margin="8,-10,0,0" Style="{StaticResource primaryButton}"  >
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
 </Page>

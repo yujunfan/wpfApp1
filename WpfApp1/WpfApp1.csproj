@@ -188,10 +188,14 @@
     </ApplicationDefinition>
     <Compile Include="ButtonColorConverter.cs" />
     <Compile Include="Global\UserInfo.cs" />
+    <Compile Include="Model\BaseViewModel.cs" />
+    <Compile Include="Model\ComboBoxOption.cs" />
+    <Compile Include="Model\WorkSection.cs" />
     <Compile Include="window\Mvvm\BindableBase.cs" />
     <Compile Include="window\Mvvm\DelegateCommand.cs" />
     <Compile Include="window\Navigation\FrameAnimator.cs" />
     <Compile Include="window\Navigation\NavigationServiceEx.cs" />
+    <Compile Include="window\ViewModels\FlawDetectionData.cs" />
     <Compile Include="window\ViewModels\MenuItem.cs" />
     <Compile Include="window\ViewModels\ShellViewModel.cs" />
     <Compile Include="window\Views\Device\Device.xaml.cs">
@@ -224,6 +228,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Style\Bash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\MMH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\mmhButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Text.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="window\Views\Device\Device.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -290,6 +310,42 @@
       <Project>{450573ca-ef26-42ec-b23c-2765a8227464}</Project>
       <Name>TService</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\check-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\wushuju.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\add_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\upload_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\download_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\delete_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\open_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\upload_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\download_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\static_blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
