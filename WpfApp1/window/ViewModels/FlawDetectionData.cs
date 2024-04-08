@@ -15,6 +15,15 @@ namespace WpfApp1.window.ViewModels
         public List<ComboBoxOption> gubie;
         public List<ComboBoxOption> timeType;
         public List<ComboBoxOption> status;
+        public List<MdlFlawDetectionData> mdlFlawDetectionDataList;
+
+
+
+        public List<MdlFlawDetectionData> MdlFlawDetectionDataList
+        {
+            get { return mdlFlawDetectionDataList; }
+            set { mdlFlawDetectionDataList = value; }
+        }
         public List<ComboBoxOption> WorkSectionData
         {
             get { return workSectionData; }
@@ -49,10 +58,11 @@ namespace WpfApp1.window.ViewModels
         {
             this.workSectionData = new List<ComboBoxOption>(); // 初始化列表
             this.timeType = new List<ComboBoxOption>();
-            this.status = new List<ComboBoxOption>();  
+            this.status = new List<ComboBoxOption>();
             this.xianbie = new List<ComboBoxOption>();
             this.gubie = new List<ComboBoxOption>();
             this.hangbie = new List<ComboBoxOption>();
+            this.mdlFlawDetectionDataList = new List<MdlFlawDetectionData>();
             this.SetData();
         }
 
@@ -65,6 +75,7 @@ namespace WpfApp1.window.ViewModels
             xianbie.Add(new ComboBoxOption("aaa", "工务段A"));
             hangbie.Add(new ComboBoxOption("aaa", "工务段A"));
             gubie.Add(new ComboBoxOption("aaa", "工务段A"));
+            this.mdlFlawDetectionDataList.Add(new MdlFlawDetectionData(1, true, "2024-04-01", "analyst", "anaystId", "fileName"));
         }
     }
 }

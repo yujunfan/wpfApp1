@@ -1,0 +1,153 @@
+﻿<UserControl x:Class="WpfApp1.window.CommonControl.Pagination"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.window.CommonControl"
+             mc:Ignorable="d" 
+             xmlns:vm="clr-namespace:WpfApp1.window.CommonControl.ViewModel"
+            d:DesignHeight="32" d:DesignWidth="1670">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="RrightButtonControlTemplate1" TargetType="{x:Type Button}">
+            <StackPanel Orientation="Horizontal">
+                <Grid>
+
+                    <Polygon x:Name="ButtonPolygon" Stretch="Fill" Height="16" Width="8" Points="0,0 8,4 0,8" Fill="#FFABABAB"/>
+                </Grid>
+                <Label Height="16" Margin="3 0 0 0" Background="#FFABABAB" Width="2"/>
+            </StackPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ButtonPolygon" Property="Fill" Value="Black"></Setter>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ButtonPolygon" Property="Fill" Value="red"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="RrightNextPageButtonControlTemplate1" TargetType="{x:Type Button}">
+            <StackPanel Orientation="Horizontal">
+                <Grid>
+
+                    <Polygon x:Name="ButtonPolygon" Stretch="Fill" Height="16" Width="8" Points="0,0 8,4 0,8" Fill="#FFABABAB"/>
+                </Grid>
+            </StackPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ButtonPolygon" Property="Fill" Value="Black"></Setter>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ButtonPolygon" Property="Fill" Value="red"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="LeftButtonControlTemplate1" TargetType="{x:Type Button}">
+            <StackPanel Orientation="Horizontal">
+                <Label Height="16" Background="#FFABABAB" Width="2" Margin="0,0,3,0"/>
+                <Grid>
+                    <Polygon x:Name="ButtonPolygon" Stretch="Uniform" Points="0,8 8,0 8,16" Fill="#FFABABAB"/>
+                </Grid>
+            </StackPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ButtonPolygon" Property="Fill" Value="Black"></Setter>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ButtonPolygon" Property="Fill" Value="red"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="LeftNextPageButtonControlTemplate" TargetType="{x:Type Button}">
+            <StackPanel HorizontalAlignment="Right">
+                <Grid>
+                    <Polygon x:Name="ButtonPolygon" Stretch="Uniform" Points="0,8 8,0 8,16" Fill="#FFABABAB"/>
+                </Grid>
+            </StackPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ButtonPolygon" Property="Fill" Value="Black"></Setter>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ButtonPolygon" Property="Fill" Value="red"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="littleTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="bd" Width="Auto" Height="Auto" BorderBrush="#C9CFE2" BorderThickness="1">
+                            <Grid x:Name="gd" HorizontalAlignment="Stretch">
+                                <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <vm:PaginationVM/>
+    </UserControl.DataContext>
+    <DockPanel LastChildFill="True" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="0 0 16 0">
+            <Label Content="每页显示" FontSize="12" Padding="0" Foreground="#425177" VerticalAlignment="Center" Margin="10,5,4,5"/>
+            <TextBox Name="pageSize" Text="{Binding pageElementNum}" PreviewMouseDown="PageSize_PreviewMouseDown" GotFocus="PageSize_GotFocus" LostFocus="PageSize_LostFocus" KeyDown="PageSize_KeyDown" Width="30" Height="24" FontSize="12"  Foreground="#425177" Style="{StaticResource littleTextBox}"/>
+
+            <Label Content="条  共" FontSize="12" Padding="0" Foreground="#425177" VerticalAlignment="Center" Margin="4,5,0,5"/>
+            <Label Content="{Binding totalElements}" FontSize="12" Foreground="#425177" Padding="0" VerticalAlignment="Center" Margin="0,0,0,0"/>
+            <Label Content="条" FontSize="12" Padding="0" Foreground="#425177" VerticalAlignment="Center" Margin="0,5,0,5"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Name="gotoFirstBtn" Template="{StaticResource LeftButtonControlTemplate1}" Margin="3,0,7,0" 
+                        VerticalAlignment="Center" Height="16" Width="13" Click="GoToFirst_Click" />
+            <Popup Name="frontPopup" PlacementTarget="{Binding ElementName=gotoFirstBtn}" PopupAnimation="Fade" 
+                       Placement="Top" IsOpen="False" StaysOpen="False">
+                <TextBlock Text="已经是第一页了哦" Background="#E5E5E5"/>
+            </Popup>
+            <!--<Button Name="priviousBtn" Template="{StaticResource LeftNextPageButtonControlTemplate}" 
+                        VerticalAlignment="Center" Height="16" Width="15" Click="PreviousPage_Click"/>-->
+            <Popup Name="front2Popup" PlacementTarget="{Binding ElementName=priviousBtn}" PopupAnimation="Fade" 
+                       Placement="Top" IsOpen="False" StaysOpen="False">
+                <TextBlock Text="已经是第一页了哦" Background="#E5E5E5"/>
+            </Popup>
+            <Label Margin="7,3,2,3" Background="#C9CFE2" Width="1" Height="16"/>
+            <Label Content="第" FontSize="12" Padding="0" VerticalAlignment="Center" Margin="4,5,4,5" Foreground="#425177"/>
+            <Label Content="{Binding currentPage}" Width="30" Height="24" VerticalAlignment="Center" FontSize="12" Foreground="#425177" Margin="0" Padding="0,3,0,0" BorderBrush="#C9CFE2" HorizontalContentAlignment="Center" BorderThickness="1"/>
+            <Label Content="页" FontSize="12" Padding="0" VerticalAlignment="Center" Margin="4,1,4,0" Foreground="#425177"/>
+            <Label Content="共" FontSize="12" Padding="0" VerticalAlignment="Center" Margin="0,1,0,0" Foreground="#425177"/>
+            <Label Content="{Binding totalPage}" FontSize="12" Padding="0" VerticalAlignment="Center" Margin="5,5,5,5" Foreground="#425177"/>
+            <Label Content="页" FontSize="12" Padding="0" VerticalAlignment="Center" Margin="0,1,0,0" Foreground="#425177"/>
+            <Label Margin="4,3,0,3" Background="#C9CFE2" Width="1" Height="16"/>
+            <Button Name="nextBtn" Template="{StaticResource RrightNextPageButtonControlTemplate1}" Margin="7,0,0,0" VerticalAlignment="Center" Width="15"
+                        Click="NextPage_Click"/>
+            <Popup Name="Behide2Popup" PlacementTarget="{Binding ElementName=nextBtn}" PopupAnimation="Fade" 
+                       Placement="Top" IsOpen="False" StaysOpen="False">
+                <TextBlock Text="已经是最后一页了哦" Background="#E5E5E5"/>
+            </Popup>
+            <Button Template="{StaticResource RrightButtonControlTemplate1}" Margin="7,0,0,0" VerticalAlignment="Center" 
+                        Name="gotoLastBtn" Click="GoToLast_Click"/>
+            <Popup Name="BehidePopup" PlacementTarget="{Binding ElementName=gotoLastBtn}" PopupAnimation="Fade" 
+                       Placement="Top" IsOpen="False" StaysOpen="False">
+                <TextBlock Text="已经是最后一页了哦" Background="#E5E5E5"/>
+            </Popup>
+            <Label Margin="7,3,7,3" Background="#C9CFE2" Width="1" Height="16"/>
+            <StackPanel VerticalAlignment="Center">
+                <Label Cursor="Hand" Content="刷新" Foreground="#425177"  FontSize="12" Padding="0" VerticalContentAlignment="Center" Margin="1,3,0,3" MouseLeftButtonDown="Refersh_MouseLeftButtonDown"/>
+            </StackPanel>
+            <Label Margin="7,3,7,3" Background="#C9CFE2" Width="1" Height="16"/>
+            <Label Content="跳到第" FontSize="12" Padding="0" VerticalAlignment="Center" Margin="1,1,4,0" Foreground="#425177"/>
+            <TextBox x:Name="gotoPage" Text="1" Width="30" Height="24" FontSize="12" Style="{StaticResource littleTextBox}" HorizontalAlignment="Stretch"/>
+            <Label Content="页" FontSize="12" Padding="0" VerticalAlignment="Center" Margin="5,1,5,0"/>
+            <Border BorderThickness="0" Width="24" Height="15" CornerRadius="2" Margin="0,0,12,0">
+                <Button x:Name="nextpage" Cursor="Hand" Click="GOTO_Click"  Height="15"  Content="GO" FontSize="12" Foreground="#425177" BorderThickness="0" Background="Transparent" Padding="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="24"/>
+            </Border>
+            <Popup Name="GotoPopup" PlacementTarget="{Binding ElementName=nextpage}" PopupAnimation="Fade" 
+                       Placement="Top" IsOpen="False" StaysOpen="False">
+                <TextBlock Text="已经超出页数范围了哦" Background="#E5E5E5"/>
+            </Popup>
+        </StackPanel>
+    </DockPanel>
+</UserControl>
