@@ -10,48 +10,51 @@
     SaveWindowPosition="True"
     mc:Ignorable="d"
     ResizeMode="CanResizeWithGrip"
-    WindowStartupLocation="CenterScreen"
+     WindowStartupLocation="CenterScreen"
      WindowTransitionsEnabled="False"
-    ShowIconOnTitleBar="True"
+     ShowIconOnTitleBar="True"
+
+     Height="900" Width="1920" TitleBarHeight="80" 
                  
-     Height="800" Width="1920"
+                 
 >
-	<mah:MetroWindow.IconTemplate>
-		<DataTemplate>
-			<iconPacks:PackIconUnicons Kind="BatteryBolt"
-                                       Width="30"
+    <mah:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <iconPacks:PackIconUnicons Kind="BatteryBolt"
+                                       Width="60"
                                        Height="100"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
                                        Margin="4"
                                        Foreground="{DynamicResource MahApps.Brushes.IdealForeground}"/>
-		</DataTemplate>
-	</mah:MetroWindow.IconTemplate>
-	<mah:MetroWindow.LeftWindowCommands>
-		<mah:WindowCommands>
+        </DataTemplate>
+    </mah:MetroWindow.IconTemplate>
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
 
-		</mah:WindowCommands>
-	</mah:MetroWindow.LeftWindowCommands>
-	<mah:MetroWindow.RightWindowCommands>
-		<mah:WindowCommands>
-			<Button Click="DeployCupCakes" Content="Deploy CupCakes">
-				<Button.ContentTemplate>
-					<DataTemplate>
-						<StackPanel Orientation="Horizontal">
-							<iconPacks:PackIconModern Width="22"
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Click="DeployCupCakes" Content="Deploy CupCakes">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconModern Width="22"
                                         Height="22"
                                         VerticalAlignment="Center"
                                         Kind="FoodCupcake" />
-							<TextBlock Margin="4 0 0 0"
+                            <TextBlock Margin="4 0 0 0"
                          VerticalAlignment="Center"
                          Text="{Binding}" />
-						</StackPanel>
-					</DataTemplate>
-				</Button.ContentTemplate>
-			</Button>
-		</mah:WindowCommands>
-	</mah:MetroWindow.RightWindowCommands>
-	<Grid Margin="0" >
-		<Frame x:Name="SubFrame" Grid.Column="1"   NavigationUIVisibility="Hidden"   />
-	</Grid>
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+
+    <Grid Margin="0"   >
+        <Frame x:Name="SubFrame"   NavigationUIVisibility="Hidden" Navigated="SubFrame_Navigated"   Grid.ColumnSpan="2"   />
+    </Grid>
 </mah:MetroWindow>

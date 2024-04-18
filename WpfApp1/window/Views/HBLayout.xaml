@@ -90,10 +90,15 @@
     <Controls:HamburgerMenu x:Name="HamburgerMenuControl"
                            DisplayMode="CompactInline"
                            IsPaneOpen="False"
+                           PaneBackground="White"
+                           PaneForeground="#425177"
+                            PaneMargin="0"
+                            OpenPaneLength="180"
                            ItemInvoked="HamburgerMenuControl_OnItemInvoked"
                            ItemTemplate="{StaticResource MenuItemTemplate}"
                            ItemsSource="{Binding Menu}"
                            OptionsItemTemplate="{StaticResource MenuItemTemplate}"
                            OptionsItemsSource="{Binding OptionsMenu}" >
+
     </Controls:HamburgerMenu>
 </Page>

@@ -114,8 +114,9 @@ namespace WpfApp1
 
         }
 
+        private void SubFrame_Navigated(object sender, NavigationEventArgs e)
+        {
 
-
-
+        }
     }
 }

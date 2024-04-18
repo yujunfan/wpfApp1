@@ -1,18 +1,9 @@
 ﻿using MahApps.Metro.Controls;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MahAppsMetroHamburgerMenuNavigation.Navigation;
 using MenuItem = WpfApp1.window.ViewModels.MenuItem;
 
@@ -57,37 +48,11 @@ namespace WpfApp1.window.Views
                     .OptionsItems
                     .OfType<MenuItem>()
                     .FirstOrDefault(x => x.NavigationDestination == e.Uri));
-
-            // or when using the NavigationType on menu item
-            // this.HamburgerMenuControl.SelectedItem = this.HamburgerMenuControl
-            //                                              .Items
-            //                                              .OfType<MenuItem>()
-            //                                              .FirstOrDefault(x => x.NavigationType == e.Content?.GetType());
-            // this.HamburgerMenuControl.SelectedOptionsItem = this.HamburgerMenuControl
-            //                                                     .OptionsItems
-            //                                                     .OfType<MenuItem>()
-            //                                                     .FirstOrDefault(x => x.NavigationType == e.Content?.GetType());
-
-            // update back button
-            //  this.GoBackButton.SetCurrentValue(VisibilityProperty, this.navigationServiceEx.CanGoBack ? Visibility.Visible : Visibility.Collapsed);
         }
 
         private void GoBack_OnClick(object sender, RoutedEventArgs e)
         {
             this.navigationServiceEx.GoBack();
         }
-        //private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
-        //{
-
-        //    this.HamburgerMenuControl.Content = e.InvokedItem;
-
-
-        //    if (!e.IsItemOptions && this.HamburgerMenuControl.IsPaneOpen)
-        //    {
-        //        Console.WriteLine(e.InvokedItem);
-        //        You can close the menu if an item was selected
-        //         this.HamburgerMenuControl.SetCurrentValue(HamburgerMenuControl.IsPaneOpenProperty, false);
-        //    }
-        //}
     }
 }

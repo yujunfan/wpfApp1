@@ -372,8 +372,7 @@
 
     <Style x:Key="ColumnHeaderStyle" TargetType="DataGridColumnHeader">
         <Setter Property="Height" Value="40"></Setter>
-        <Setter Property="Width" Value="Auto"></Setter>
-        <Setter Property="Background" Value="#f50"></Setter>
+        <Setter Property="Background" Value="#F9F9F9"></Setter>
         <Setter Property="BorderThickness" Value="0 0 1 1"></Setter>
         <Setter Property="BorderBrush" Value="#EDEDED"></Setter>
         <Setter Property="FontWeight" Value="Bold"/>
@@ -411,20 +410,20 @@
 
             <Trigger Property="ItemsControl.AlternationIndex"
                         Value="0">
-                <Setter Property="Background" Value="#f50" />
+                <Setter Property="Background" Value="#FFFFFF" />
             </Trigger>
 
             <Trigger Property="ItemsControl.AlternationIndex"
                         Value="1">
-                <Setter Property="Background" Value="#f50" />
+                <Setter Property="Background" Value="#FFFFFF" />
             </Trigger>
 
 
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#f50"/>
+                <Setter Property="Background" Value="#F5F6FF"/>
             </Trigger>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background"  Value="#f50" />
+                <Setter Property="Background"  Value="#F5F6FF" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -490,7 +489,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background"  Value="#f50" />
+                <Setter Property="Background"  Value="#FAFAFA" />
                 <Setter Property="Foreground" Value="#000000" />
             </Trigger>
         </Style.Triggers>
