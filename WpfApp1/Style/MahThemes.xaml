@@ -16,7 +16,8 @@
     <SolidColorBrush x:Key="Theme.ShowcaseBrush" Color="#FF0078D7" options:Freeze="True" />
 
     <!--  *************COLORS START*************  -->
-
+    <!--  UI设计主题 -->
+    <Color x:Key="Seer.Colors.BG">#F5F7FF</Color>
     <!--  Theme Base Colors  -->
 
     <!--  ACCENT COLORS  -->
@@ -33,7 +34,7 @@
 
     <!--  BASE COLORS  -->
     <Color x:Key="MahApps.Colors.ThemeForeground">#FF000000</Color>
-    <Color x:Key="MahApps.Colors.ThemeBackground">#FFFFFFFF</Color>
+    <Color x:Key="MahApps.Colors.ThemeBackground">White</Color>
     <Color x:Key="MahApps.Colors.IdealForeground">White</Color>
 
     <Color x:Key="MahApps.Colors.Gray1">#FF333333</Color>
@@ -63,7 +64,7 @@
     <!--  PROJECT TEMPLATE BRUSHES  -->
 
     <!--  UNIVERSAL CONTROL BRUSHES  -->
-    <SolidColorBrush x:Key="MahApps.Brushes.ThemeBackground" Color="{StaticResource MahApps.Colors.ThemeBackground}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.ThemeBackground" Color="{StaticResource Seer.Colors.BG}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.ThemeForeground" Color="{StaticResource MahApps.Colors.ThemeForeground}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.Text" Color="{StaticResource MahApps.Colors.ThemeForeground}" options:Freeze="True" />
 
@@ -72,8 +73,8 @@
     <SolidColorBrush x:Key="MahApps.Brushes.Selected.Foreground" Color="{StaticResource MahApps.Colors.IdealForeground}" options:Freeze="True" />
 
     <SolidColorBrush x:Key="MahApps.Brushes.WindowTitle" Color="{StaticResource MahApps.Colors.Accent}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.WindowTitle.NonActive" Color="#808080" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.Border.NonActive" Color="#808080" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.WindowTitle.NonActive" Color="#fff" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.Border.NonActive" Color="#fff" options:Freeze="True" />
 
     <SolidColorBrush x:Key="MahApps.Brushes.Highlight" Color="{StaticResource MahApps.Colors.Highlight}" options:Freeze="True" />
 

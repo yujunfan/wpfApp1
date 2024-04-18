@@ -24,9 +24,9 @@
         <vm:FlawDetectionData />
     </Page.DataContext>
 
-    <Border Background="#fff" Padding="16">
+    <Border Padding="16">
         <Grid Margin="0">
-            <Border>
+            <Border Background="#fff">
                 <StackPanel Orientation="Vertical">
                     <Border  Height="120" BorderBrush="#E2E5F4" BorderThickness="0,0,0,1">
                         <Grid  >
