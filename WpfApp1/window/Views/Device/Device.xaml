@@ -7,8 +7,88 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Device">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/Bash.xaml"/>
+                <ResourceDictionary Source="/Style/Text.xaml"/>
+                <ResourceDictionary Source="/Style/MMH.xaml"/>
+                <ResourceDictionary Source="/Style/mmhButton.xaml"/>
+                <ResourceDictionary Source="/Style/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
-        <TextBlock Text="设备管理" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0"  Content="Search" Click="SearchButton_Click" Margin="10"/>
+        <Border Grid.Row="1" Margin="0,0,0,0" BorderThickness="0" BorderBrush="#EDEDED">
+            <StackPanel Orientation="Vertical">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" VirtualizingPanel.IsVirtualizing="True">
+                    <Grid>
+                        <DataGrid Name="FileDataGrid"
+                               Height="622"
+                               Width="Auto"
+                               RowHeaderWidth="0" 
+                               HeadersVisibility="Column" 
+                               AreRowDetailsFrozen="True" 
+                               Style="{StaticResource DataGridStyle}" 
+                               ColumnHeaderStyle="{StaticResource ColumnHeaderStyle}"
+                               RowStyle="{StaticResource RowStyle}" 
+                               CellStyle="{StaticResource CellStyle}" 
+                               HorizontalScrollBarVisibility="Disabled">
+                            <DataGrid.Columns   >
+                                <DataGridTemplateColumn Width="1*">
+                                    <DataGridTemplateColumn.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="序号"/>
+                                        </StackPanel>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding num}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="设备名称" Width="8*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding DeviceName}" Style="{StaticResource TextBlockNormalStyle}"   VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="设备地址" Width="8*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding DeviceAddress}" Style="{StaticResource TextBlockNormalStyle}"   VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="操作" Width="1.8*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <Button   Content="连接" Style="{StaticResource C75C548Button}" Width="42" Height="28" FontSize="12"  Margin="0,0,6,0" Padding="0" Click="ConnectBluetooth_Click" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--<widget:NoData x:Name="noData"/>-->
+                    </Grid>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>
