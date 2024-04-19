@@ -18,6 +18,7 @@
     <!--  *************COLORS START*************  -->
     <!--  UI设计主题 -->
     <Color x:Key="Seer.Colors.BG">#F5F7FF</Color>
+    <Color x:Key="Seer.Colors.Text">#586B9A</Color>
     <!--  Theme Base Colors  -->
 
     <!--  ACCENT COLORS  -->
@@ -70,11 +71,11 @@
 
     <SolidColorBrush x:Key="MahApps.Brushes.IdealForeground" Color="{StaticResource MahApps.Colors.IdealForeground}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.IdealForegroundDisabled" Color="#FFADADAD" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.Selected.Foreground" Color="{StaticResource MahApps.Colors.IdealForeground}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.Selected.Foreground" Color="{StaticResource Seer.Colors.BG}" options:Freeze="True" />
 
     <SolidColorBrush x:Key="MahApps.Brushes.WindowTitle" Color="{StaticResource MahApps.Colors.Accent}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.WindowTitle.NonActive" Color="#fff" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.Border.NonActive" Color="#fff" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.WindowTitle.NonActive" Color="{StaticResource Seer.Colors.BG}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.Border.NonActive" Color="{StaticResource Seer.Colors.BG}" options:Freeze="True" />
 
     <SolidColorBrush x:Key="MahApps.Brushes.Highlight" Color="{StaticResource MahApps.Colors.Highlight}" options:Freeze="True" />
 
@@ -344,6 +345,7 @@
     <SolidColorBrush x:Key="MahApps.Brushes.SystemControlHighlightAltBaseMediumLow" Color="{StaticResource MahApps.Colors.SystemBaseMediumLow}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.SystemControlHighlightAltChromeWhite" Color="{StaticResource MahApps.Colors.SystemChromeWhite}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.SystemControlHighlightAltListAccentHigh" Opacity="0.7" Color="{StaticResource MahApps.Colors.SystemAccent}" options:Freeze="True" />
+
     <SolidColorBrush x:Key="MahApps.Brushes.SystemControlHighlightAltListAccentLow" Opacity="0.4" Color="{StaticResource MahApps.Colors.SystemAccent}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.SystemControlHighlightAltListAccentMedium" Opacity="0.6" Color="{StaticResource MahApps.Colors.SystemAccent}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.SystemControlHighlightAltTransparent" Color="Transparent" options:Freeze="True" />

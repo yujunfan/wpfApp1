@@ -6,19 +6,38 @@
     xmlns:local="clr-namespace:WpfApp1"
     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:cc="clr-namespace:WpfApp1.window.CommonControl"
     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     SaveWindowPosition="True"
     mc:Ignorable="d"
     ResizeMode="CanResizeWithGrip"
-     WindowStartupLocation="CenterScreen"
-     WindowTransitionsEnabled="False"
-     ShowIconOnTitleBar="True"
-     Height="900" Width="1920" 
-     TitleBarHeight="80" 
-     WindowTitleBrush="#ffffff"
-                 
-                          
+    WindowStartupLocation="CenterScreen"
+    WindowTransitionsEnabled="False"
+    ShowIconOnTitleBar="True"
+    Height="900" Width="1920" 
+    TitleBarHeight="80" 
+    WindowTitleBrush="#ffffff"
+                                    
 >
+
+    <mah:MetroWindow.Resources>
+        <Style x:Key="RoundButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="21" 
+                           >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </mah:MetroWindow.Resources>
+    <mah:MetroWindow.WindowButtonCommands>
+        <mah:WindowButtonCommands/>
+    </mah:MetroWindow.WindowButtonCommands>
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <Image Width="146" Margin="16,0,0,0" Height="64" Source="/Resources/Common/logo.png"/>
@@ -30,26 +49,44 @@
         </mah:WindowCommands>
     </mah:MetroWindow.LeftWindowCommands>
     <mah:MetroWindow.RightWindowCommands>
-        <mah:WindowCommands>
-            <Button Click="DeployCupCakes" Content="Deploy CupCakes">
-                <Button.ContentTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <iconPacks:PackIconModern Width="22"
-                                        Height="22"
-                                        VerticalAlignment="Center"
-                                        Kind="FoodCupcake" />
-                            <TextBlock Margin="4 0 0 0"
-                         VerticalAlignment="Center"
-                         Text="{Binding}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </Button.ContentTemplate>
+        <mah:WindowCommands ShowLastSeparator="False">
+            <Button x:Name="carButton" Background="#C3C3C3" Foreground="#fff" Click="ConnectCar" Width="150" Height="42" Opacity="1" Margin="8,0"  Style="{StaticResource RoundButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="carImage" Source="/Resources/Common/unactive_car.png" Width="32" Height="32" Margin="0,0,10,0"   />
+                    <TextBlock x:Name="carText"   Text="小车未连接" FontSize="14" VerticalAlignment="Center"  />
+                </StackPanel>
+                <!-- 这里放置按钮的内容 -->
+            </Button>
+            <Button  x:Name="printerButton" Background="#C3C3C3" Foreground="#fff" Click="ConnectPrinter" Width="150" Height="42" Opacity="1" Margin="8,0" Style="{StaticResource RoundButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="printerImage" Source="/Resources/Common/unactive_printer.png" Width="32" Height="32" Margin="0,0,10,0"   />
+                    <TextBlock x:Name="printerText" Text="打印机未连接" FontSize="14" VerticalAlignment="Center"  />
+                </StackPanel>
+                <!-- 这里放置按钮的内容 -->
+            </Button>
+
+            <Button x:Name="zjButton" Background="#C3C3C3" Foreground="#fff" Click="ConnectZJ" Width="150" Height="42" Opacity="1"  Margin="8,0" Style="{StaticResource RoundButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="zjImage" Source="/Resources/Common/unactive_zj.png" Width="32" Height="32" Margin="0,0,10,0"   />
+                    <TextBlock x:Name="zjText"  Text="仲景已连接" FontSize="14" VerticalAlignment="Center"  />
+                </StackPanel>
+                <!-- 这里放置按钮的内容 -->
             </Button>
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
 
     <Grid Margin="0,2"   >
-        <Frame x:Name="SubFrame"   NavigationUIVisibility="Hidden" Navigated="SubFrame_Navigated"   Grid.ColumnSpan="2"   />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="32"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Frame x:Name="SubFrame"   NavigationUIVisibility="Hidden" Navigated="SubFrame_Navigated"   Grid.Row="0" Margin="0,0,0,32" Grid.RowSpan="2"   />
+        <Border Grid.Row="1"  BorderBrush="#D8DFF3" BorderThickness="1">
+            <cc:Footer />
+        </Border>
+
     </Grid>
 </mah:MetroWindow>

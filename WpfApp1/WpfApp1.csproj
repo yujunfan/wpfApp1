@@ -190,11 +190,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ButtonColorConverter.cs" />
+    <Compile Include="Global\BluetoothInfo.cs" />
+    <Compile Include="Global\SerialPortInfo.cs" />
     <Compile Include="Global\UserInfo.cs" />
     <Compile Include="Model\BaseViewModel.cs" />
     <Compile Include="Model\ComboBoxOption.cs" />
     <Compile Include="Model\MdlFlawDetectionData.cs" />
     <Compile Include="Model\WorkSection.cs" />
+    <Compile Include="window\CommonControl\Footer.xaml.cs">
+      <DependentUpon>Footer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="window\Mvvm\BindableBase.cs" />
     <Compile Include="window\Mvvm\DelegateCommand.cs" />
     <Compile Include="window\Navigation\FrameAnimator.cs" />
@@ -258,6 +263,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Style\Text.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\CommonControl\Footer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -373,6 +382,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Common\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\upload_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\down_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\notice_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\Zhongjing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\unactive_printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\unactive_car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\active_zj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\unactive_zj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\active_car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Common\active_printer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
