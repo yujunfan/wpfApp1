@@ -3,9 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:WpfApp1"
-    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:cc="clr-namespace:WpfApp1.window.CommonControl"
     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     SaveWindowPosition="True"
@@ -14,64 +11,52 @@
     WindowStartupLocation="CenterScreen"
     WindowTransitionsEnabled="False"
     ShowIconOnTitleBar="True"
-    Height="900" Width="1920" 
+     Width="1920" Height="1080"
     TitleBarHeight="80" 
     WindowTitleBrush="#ffffff"
                                     
 >
 
-    <mah:MetroWindow.Resources>
-        <Style x:Key="RoundButtonStyle" TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" 
-                            CornerRadius="21" 
-                           >
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </mah:MetroWindow.Resources>
-    <mah:MetroWindow.WindowButtonCommands>
-        <mah:WindowButtonCommands/>
+    <!-- 最大最小化关闭按钮 -->
+    <mah:MetroWindow.WindowButtonCommands  >
+        <mah:WindowButtonCommands
+            x:Name="wbcs"  
+            LightMinButtonStyle="{DynamicResource Seer.Styles.Button.MetroWindow.Light}"
+            LightCloseButtonStyle="{DynamicResource Seer.Styles.Button.MetroWindow.Light}"
+            LightMaxButtonStyle="{DynamicResource Seer.Styles.Button.MetroWindow.Light}"   >
+            <mah:WindowButtonCommands.Resources>
+                <Style x:Key="Seer.Styles.Button.MetroWindow.Light" BasedOn="{StaticResource MahApps.Styles.Button.MetroWindow.Base}" TargetType="{x:Type Button}">
+                    <Setter Property="Foreground" Value="#586B9A" />
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="Focusable" Value="False" />
+                    <Setter Property="IsTabStop" Value="False" />
+                    <Setter Property="MaxHeight" Value="34" />
+                    <Setter Property="Padding" Value="0" />
+                    <Setter Property="Width" Value="34" />
+                </Style>
+            </mah:WindowButtonCommands.Resources>
+        </mah:WindowButtonCommands>
     </mah:MetroWindow.WindowButtonCommands>
+
+    <!-- 顶部左边logo -->
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <Image Width="146" Margin="16,0,0,0" Height="64" Source="/Resources/Common/logo.png"/>
         </DataTemplate>
     </mah:MetroWindow.IconTemplate>
+
+    <!-- 顶部左边区域 -->
     <mah:MetroWindow.LeftWindowCommands>
         <mah:WindowCommands>
 
         </mah:WindowCommands>
     </mah:MetroWindow.LeftWindowCommands>
-    <mah:MetroWindow.RightWindowCommands>
-        <mah:WindowCommands ShowLastSeparator="False">
-            <Button x:Name="carButton" Background="#C3C3C3" Foreground="#fff" Click="ConnectCar" Width="150" Height="42" Opacity="1" Margin="8,0"  Style="{StaticResource RoundButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image x:Name="carImage" Source="/Resources/Common/unactive_car.png" Width="32" Height="32" Margin="0,0,10,0"   />
-                    <TextBlock x:Name="carText"   Text="小车未连接" FontSize="14" VerticalAlignment="Center"  />
-                </StackPanel>
-                <!-- 这里放置按钮的内容 -->
-            </Button>
-            <Button  x:Name="printerButton" Background="#C3C3C3" Foreground="#fff" Click="ConnectPrinter" Width="150" Height="42" Opacity="1" Margin="8,0" Style="{StaticResource RoundButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image x:Name="printerImage" Source="/Resources/Common/unactive_printer.png" Width="32" Height="32" Margin="0,0,10,0"   />
-                    <TextBlock x:Name="printerText" Text="打印机未连接" FontSize="14" VerticalAlignment="Center"  />
-                </StackPanel>
-                <!-- 这里放置按钮的内容 -->
-            </Button>
 
-            <Button x:Name="zjButton" Background="#C3C3C3" Foreground="#fff" Click="ConnectZJ" Width="150" Height="42" Opacity="1"  Margin="8,0" Style="{StaticResource RoundButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image x:Name="zjImage" Source="/Resources/Common/unactive_zj.png" Width="32" Height="32" Margin="0,0,10,0"   />
-                    <TextBlock x:Name="zjText"  Text="仲景已连接" FontSize="14" VerticalAlignment="Center"  />
-                </StackPanel>
-                <!-- 这里放置按钮的内容 -->
-            </Button>
+
+    <!-- 顶部右边区域 -->
+    <mah:MetroWindow.RightWindowCommands >
+        <mah:WindowCommands ShowLastSeparator="False"  >
+            <cc:DeviceConnectControl />
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
 
@@ -83,7 +68,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="32"></RowDefinition>
         </Grid.RowDefinitions>
-        <Frame x:Name="SubFrame"   NavigationUIVisibility="Hidden" Navigated="SubFrame_Navigated"   Grid.Row="0" Margin="0,0,0,32" Grid.RowSpan="2"   />
+        <Frame x:Name="SubFrame"   NavigationUIVisibility="Hidden"   Grid.Row="0" Margin="0,0,0,32" Grid.RowSpan="2"   />
         <Border Grid.Row="1"  BorderBrush="#D8DFF3" BorderThickness="1">
             <cc:Footer />
         </Border>

@@ -190,13 +190,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ButtonColorConverter.cs" />
-    <Compile Include="Global\BluetoothInfo.cs" />
-    <Compile Include="Global\SerialPortInfo.cs" />
+    <Compile Include="Global\CarConnection.cs" />
+    <Compile Include="Global\PrinterConnection.cs" />
     <Compile Include="Global\UserInfo.cs" />
+    <Compile Include="Global\ZJClientConnection.cs" />
     <Compile Include="Model\BaseViewModel.cs" />
     <Compile Include="Model\ComboBoxOption.cs" />
     <Compile Include="Model\MdlFlawDetectionData.cs" />
     <Compile Include="Model\WorkSection.cs" />
+    <Compile Include="window\CommonControl\DeviceConnectControl.xaml.cs">
+      <DependentUpon>DeviceConnectControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="window\CommonControl\Footer.xaml.cs">
       <DependentUpon>Footer.xaml</DependentUpon>
     </Compile>
@@ -263,6 +267,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Style\Text.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="window\CommonControl\DeviceConnectControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

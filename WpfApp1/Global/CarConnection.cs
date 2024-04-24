@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Global
 {
-    public static class BluetoothInfo
+    public static class CarConnection
     {
         public static event EventHandler VariableChanged;
 
@@ -20,11 +20,11 @@ namespace WpfApp1.Global
             set
             {
                 connected = value;
-                OnVariableChanged(EventArgs.Empty);
+                OnConnectedChanged(EventArgs.Empty);
             }
         }
         // 当全局变量改变时调用此方法来触发事件
-        private static void OnVariableChanged(EventArgs e)
+        private static void OnConnectedChanged(EventArgs e)
         {
             VariableChanged?.Invoke(null, e);
         }

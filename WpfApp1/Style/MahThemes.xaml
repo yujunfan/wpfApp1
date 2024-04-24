@@ -558,4 +558,26 @@
     <markup:StaticResource x:Key="MahApps.Brushes.ToggleSwitch.KnobFillOnPointerOver" ResourceKey="MahApps.Brushes.SystemControlHighlightChromeWhite" />
     <markup:StaticResource x:Key="MahApps.Brushes.ToggleSwitch.KnobFillOnPressed" ResourceKey="MahApps.Brushes.SystemControlHighlightAltChromeWhite" />
     <markup:StaticResource x:Key="MahApps.Brushes.ToggleSwitch.KnobFillOnDisabled" ResourceKey="MahApps.Brushes.SystemControlPageBackgroundBaseLow" />
+    <Style x:Key="Seer.Styles.Button.MetroWindow.Light" BasedOn="{StaticResource MahApps.Styles.Button.MetroWindow.Base}" TargetType="{x:Type Button}">
+        <Style.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.WindowButtonCommands.Background.MouseOver}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.AccentBase}" />
+                <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.IdealForeground}" />
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.IdealForegroundDisabled}" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="MaxHeight" Value="34" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Width" Value="34" />
+    </Style>
+
 </ResourceDictionary>

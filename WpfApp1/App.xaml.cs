@@ -20,9 +20,9 @@ namespace WpfApp1
         {
             base.OnStartup(e);
 
-            // Add custom theme resource dictionaries
-            // You should replace SampleApp with your application name
-            // and the correct place where your custom theme lives
+            //Add custom theme resource dictionaries
+            //You should replace SampleApp with your application name
+            //and the correct place where your custom theme lives
             var theme = ThemeManager.Current.AddLibraryTheme(
                 new LibraryTheme(
                     new Uri("Style/MahThemes.xaml", UriKind.RelativeOrAbsolute),

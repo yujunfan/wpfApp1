@@ -10,12 +10,13 @@
       Title="MainPage">
 
     <Grid>
-        <iconPacks:PackIconFontAwesome Width="48"
-                                       Height="48"
-                                       Margin="10"
-                                       HorizontalAlignment="Right"
-                                       VerticalAlignment="Top"
-                                       Foreground="{DynamicResource MahApps.Brushes.AccentBase}"
-                                       Kind="InfoCircleSolid" />
+        <iconPacks:PackIconFontAwesome 
+            Width="48"
+            Height="48"
+            Margin="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Foreground="{DynamicResource MahApps.Brushes.AccentBase}"
+            Kind="InfoCircleSolid" />
     </Grid>
 </Page>

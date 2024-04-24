@@ -5,16 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/// <summary>
-/// 串口波特率列表。
-/// 75,110,150,300,600,1200,2400,4800,9600,14400,19200,28800,38400,56000,57600,
-/// 115200,128000,230400,256000
-/// </summary>
-
-
-
 namespace WpfApp1.Global
 {
+
     #region 波特率、数据位的枚举
     /// <summary>
     /// 串口数据位列表（5,6,7,8）
@@ -55,8 +48,7 @@ namespace WpfApp1.Global
         BR_256000 = 256000
     }
     #endregion
-
-    public static class SerialPortInfo
+    public static class ZJClientConnection
     {
         public static event EventHandler VariableChanged;
 
@@ -71,15 +63,13 @@ namespace WpfApp1.Global
             set
             {
                 opened = value;
-                OnVariableChanged(EventArgs.Empty);
+                OnOpenedChanged(EventArgs.Empty);
             }
         }
         // 当全局变量改变时调用此方法来触发事件
-        private static void OnVariableChanged(EventArgs e)
+        private static void OnOpenedChanged(EventArgs e)
         {
             VariableChanged?.Invoke(null, e);
         }
-
-
     }
 }
