@@ -24,293 +24,211 @@
         <vm:FlawDetectionData />
     </Page.DataContext>
 
-    <Border Padding="16">
-        <Grid Margin="0">
-            <Border Background="#fff">
-                <StackPanel Orientation="Vertical">
-                    <Border  Height="120" BorderBrush="#E2E5F4" BorderThickness="0,0,0,1">
-                        <Grid  >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="0.5*"/>
-                                <RowDefinition Height="0.5*"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Grid.ColumnDefinitions>
+    <Border Margin="8" Padding="8" Background="#fff">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" >
+            <Grid  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" ></RowDefinition>
+                    <RowDefinition  Height="*" ></RowDefinition>
+                </Grid.RowDefinitions>
 
-                                </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
-                                    <TextBlock Text="工务段：" Width="56" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
-                                    <ComboBox Name="cbbWorkSection" Width="140" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" ItemsSource="{Binding WorkSectionData}" Margin="0,15,0,0"  DisplayMemberPath="Name" SelectedValuePath="Id"/>
-                                    <TextBlock Text="线别：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
-                                    <ComboBox Name="cbbXianbie" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0,15,0,0" ItemsSource="{Binding Xianbie}"  DisplayMemberPath="Name" SelectedValuePath="Id"  />
-                                    <TextBlock Text="行   别："   Width="56" Style="{StaticResource TextBlockNormalStyle}" Height="22"  Margin="16,17,0,0"/>
-                                    <ComboBox Name="cbbXingBie"  Width="140" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" Margin="0,15,0,0" ItemsSource="{Binding Hangbie}" DisplayMemberPath="Name" SelectedValuePath="Id" />
-                                    <TextBlock Text="股别：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
-                                    <ComboBox  ItemsSource="{Binding Gubie}" DisplayMemberPath="Name" SelectedValuePath="Id" Name="cbbGuBie" Width="130" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}"  BorderThickness="1" Margin="0,15,0,0"   />
-                                    <TextBlock Text="线名：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
-                                    <ComboBox Name="cbbXianMing" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0,15,0,0" ItemsSource="{Binding Xianbie}"  DisplayMemberPath="Name" SelectedValuePath="Id"  />
-                                    <TextBlock Text="线编号：" Width="56" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
-                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="90" Height="32"  Margin="0 17 0 11">
-                                        <TextBox Name="txtRailwayLine"  Style="{StaticResource TextBoxCenterStyle}"/>
-                                    </Border>
-                                    <TextBlock Text="搜索时间：" Width="70" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
-                                    <ComboBox ItemsSource="{Binding TimeType}" DisplayMemberPath="Name" SelectedValuePath="Id" Name="cbbTimeType"  Width="130" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" Margin="0,15,0,0"/>
-                                    <Border BorderBrush="#C9CFE2 " BorderThickness="1" Width="120" Height="32" Margin="26,17,0,0" CornerRadius="3" >
-                                        <DatePicker Name="dpkTimeS" Width="88"  VerticalAlignment="Center" Language="zh" Height="32" Margin="4,-1" VerticalContentAlignment="Center" BorderBrush="#C9CFE2"/>
-                                    </Border>
-                                    <TextBlock Text="—" Width="6" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="2,17,0,0"/>
-                                    <Border Margin="2,15,0,0" Width="120" Height="32" BorderBrush="#C9CFE2 " BorderThickness="1" CornerRadius="3">
-                                        <DatePicker Name="dpkTimeE" Language="zh" Width="88"  VerticalAlignment="Stretch" Margin="-1" VerticalContentAlignment="Center" BorderBrush="#C9CFE2"/>
-                                    </Border>
-                                </StackPanel>
-                            </Grid>
+                <Border Grid.Row="0"  Padding="0,0,0,16"  BorderBrush="#E2E5F4" BorderThickness="0,0,0,1">
+                    <Grid  >
+                        <WrapPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="工务段：" Width="56" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
+                                <ComboBox Name="cbbWorkSection" Width="140" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" ItemsSource="{Binding WorkSectionData}" Margin="0,15,0,0"  DisplayMemberPath="Name" SelectedValuePath="Id"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
 
-                            <Grid Grid.Row="1">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="状态:" Width="42" Style="{StaticResource TextBlockNormalStyle}" Margin="16,0,0,11" Height="16" />
-                                    <ComboBox Name="cbbIsSubmit" ItemsSource="{Binding Status}" DisplayMemberPath="Name" SelectedValuePath="Id" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0 0 0 11" />
-                                    <TextBlock Text="文件名：" Width="56" Style="{StaticResource TextBlockNormalStyle}" Height="19"  Margin="16,0,0,11"/>
-                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="285" Height="32"  Margin="0 0 0 11">
-                                        <TextBox Name="txtOriginalFileName" Style="{StaticResource TextBoxCenterStyle}" />
-                                    </Border>
-                                    <TextBlock Text="施工负责人：" Style="{StaticResource TextBlockNormalStyle}" Width="84" Height="19"  Margin="16,0,0,11"/>
-                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="130" Height="32"  Margin="0 0 0 11">
-                                        <TextBox Name="txtPrincipal"  Style="{StaticResource TextBoxCenterStyle}"/>
-                                    </Border>
-                                    <TextBlock Text="分析员：" Width="56" Height="19" Style="{StaticResource TextBlockNormalStyle}" Margin="16,0,0,11"/>
-                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="90" Height="32"  Margin="0 0 0 11">
-                                        <TextBox Name="txtAnalyst" Style="{StaticResource TextBoxCenterStyle}"  />
-                                    </Border>
-                                    <TextBlock Text="班组编号：" Width="70" Height="19" Style="{StaticResource TextBlockNormalStyle}" Margin="16,0,0,11"/>
-                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}"  Width="55" Height="32"  Margin="0 0 0 11">
-                                        <TextBox Name="txtWorkGroup" Style="{StaticResource TextBoxCenterStyle}"/>
-                                    </Border>
-                                    <TextBlock Text="里程：" Width="42" Height="19" Style="{StaticResource TextBlockNormalStyle}" Margin="16,0,0,11" Visibility="Visible"/>
-                                    <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="55" Height="32"  Margin="0 0 0 11">
-                                        <TextBox Name="txtWorkMil" Width="55" Height="32" Style="{StaticResource TextBoxCenterStyle}" Visibility="Visible" />
-                                    </Border>
-                                    <!--Style="{StaticResource CancelButton}"-->
-                                    <!--Style="{StaticResource ConfirmButton}"-->
-                                    <Button x:Name="btnLearn" Content="学习文件" Style="{StaticResource primaryOutlineButton}"  Margin="8,-10,0,0"/>
-                                    <Button x:Name="btnReset" Content="重 置" Style="{StaticResource grayButton}" Margin="8,-10,0,0" />
-                                    <Button x:Name="btnSearch" Content="搜 索"  Margin="8,-10,0,0" Style="{StaticResource primaryButton}"  Click="btnSearch_Click" >
-                                    </Button>
-                                </StackPanel>
-                            </Grid>
+                                <TextBlock Text="线别：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
+                                <ComboBox Name="cbbXianbie" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0,15,0,0" ItemsSource="{Binding Xianbie}"  DisplayMemberPath="Name" SelectedValuePath="Id"  />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="行   别："   Width="56" Style="{StaticResource TextBlockNormalStyle}" Height="22"  Margin="16,17,0,0"/>
+                                <ComboBox Name="cbbXingBie"  Width="140" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" Margin="0,15,0,0" ItemsSource="{Binding Hangbie}" DisplayMemberPath="Name" SelectedValuePath="Id" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="股别：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
+                                <ComboBox  ItemsSource="{Binding Gubie}" DisplayMemberPath="Name" SelectedValuePath="Id" Name="cbbGuBie" Width="130" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}"  BorderThickness="1" Margin="0,15,0,0"   />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="线名：" Width="42" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
+                                <ComboBox Name="cbbXianMing" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0,15,0,0" ItemsSource="{Binding Xianbie}"  DisplayMemberPath="Name" SelectedValuePath="Id"  />
+                            </StackPanel>
+                            <!--<StackPanel Orientation="Horizontal">
+                                <TextBlock Text="线编号：" Width="56" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0"/>
+                                <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="90" Height="32"  Margin="0 17 0 11">
+                                    <TextBox Name="txtRailwayLine"  Style="{StaticResource TextBoxCenterStyle}"/>
+                                </Border>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="搜索时间：" Width="70" Height="22" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,17,0,0"/>
+                                <ComboBox ItemsSource="{Binding TimeType}" DisplayMemberPath="Name" SelectedValuePath="Id" Name="cbbTimeType"  Width="130" Height="32"  Style="{StaticResource FlawmmhComboBoxStyle}" Margin="0,15,0,0"/>
+                                <Border BorderBrush="#C9CFE2 " BorderThickness="1" Width="120" Height="32" Margin="26,17,0,0" CornerRadius="3" >
+                                    <DatePicker Name="dpkTimeS" Width="88" BorderThickness="0"  VerticalAlignment="Center" Language="zh" Height="32" Margin="15,0,0,0" VerticalContentAlignment="Center" HorizontalAlignment="Left">
+
+                                    </DatePicker>
+                                </Border>
+                                <TextBlock Text="—" Width="6" Height="22" Style="{StaticResource TextBlockNormalStyle}" Margin="2,17,0,0"/>
+                                <Border Margin="2,15,0,0" Width="120" Height="32" BorderBrush="#C9CFE2 " BorderThickness="1" CornerRadius="3">
+                                    <DatePicker Name="dpkTimeE" Language="zh" Width="88" BorderThickness="0"  VerticalAlignment="Center" Margin="-1" VerticalContentAlignment="Center" BorderBrush="#C9CFE2"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="状态:" Width="42" Style="{StaticResource TextBlockNormalStyle}" Margin="16,17,0,0" Height="26" />
+                                <ComboBox Name="cbbIsSubmit" ItemsSource="{Binding Status}" DisplayMemberPath="Name"  SelectedValuePath="Id" Width="140" Height="32" BorderBrush="#707070 " Style="{StaticResource FlawmmhComboBoxStyle}" BorderThickness="1" Margin="0 17 0 11" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="文件名：" Width="56" Style="{StaticResource TextBlockNormalStyle}" Height="23"   Margin="16,10,0,0"/>
+                                <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="285" Height="32"  Margin="0 17 0 11">
+                                    <TextBox Name="txtOriginalFileName" Style="{StaticResource TextBoxCenterStyle}" />
+                                </Border>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="施工负责人：" Style="{StaticResource TextBlockNormalStyle}" Width="84" Height="26"  Margin="16,13,0,0"/>
+                                <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="130" Height="32"  Margin="0 17 0 11">
+                                    <TextBox Name="txtPrincipal"  Style="{StaticResource TextBoxCenterStyle}"/>
+                                </Border>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="分析员：" Width="56" Height="26" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,13,0,0"/>
+                                <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="90" Height="32"  Margin="0 17 0 11">
+                                    <TextBox Name="txtAnalyst" Style="{StaticResource TextBoxCenterStyle}"  />
+                                </Border>
+
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="班组编号：" Width="70" Height="26" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,13,0,0"/>
+                                <Border Style="{StaticResource BorderTextBoxCenterStyle}"  Width="55" Height="32"  Margin="0 17 0 11">
+                                    <TextBox Name="txtWorkGroup" Style="{StaticResource TextBoxCenterStyle}"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="里程：" Width="42" Height="26" Style="{StaticResource TextBlockNormalStyle}"  Margin="16,13,0,0" Visibility="Visible"/>
+                                <Border Style="{StaticResource BorderTextBoxCenterStyle}" Width="55" Height="32"  Margin="0 17 0 11">
+                                    <TextBox Name="txtWorkMil" Width="55" Height="32" Style="{StaticResource TextBoxCenterStyle}" Visibility="Visible" />
+                                </Border>
+                            </StackPanel>-->
+
+                            <!--Style="{StaticResource CancelButton}"-->
+                            <!--Style="{StaticResource ConfirmButton}"-->
+                            <Button x:Name="btnLearn" Content="学习文件" Style="{StaticResource primaryOutlineButton}"  Margin="16,17,0,0"/>
+                            <Button x:Name="btnReset" Content="重 置" Style="{StaticResource grayButton}" Margin="16,17,0,0" />
+                            <Button x:Name="btnSearch" Content="搜 索"  Margin="16,17,0,0" Style="{StaticResource primaryButton}"  Click="btnSearch_Click" >
+                            </Button>
+
+                        </WrapPanel>
+
+
+
+                    </Grid>
+                </Border>
+                <Border  Grid.Row="1" Margin="0,16">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <DataGrid Name="FileDataGrid"
+                          Height="500"
+                          RowHeaderWidth="0" 
+                          HeadersVisibility="Column" 
+                          AreRowDetailsFrozen="True" 
+                          ItemsSource="{Binding MdlFlawDetectionDataList}"
+                          Style="{StaticResource DataGridStyle}" 
+                          ColumnHeaderStyle="{StaticResource ColumnHeaderStyle}"
+                          RowStyle="{StaticResource RowStyle}" 
+                          CellStyle="{StaticResource CellStyle}" 
+                          HorizontalScrollBarVisibility="Disabled">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Width="50">
+                                        <DataGridTemplateColumn.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <CheckBox Name="AllSelectCheckBox"  />
+
+                                            </StackPanel>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <CheckBox IsChecked="{Binding IsSelect, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Width="50">
+                                        <DataGridTemplateColumn.Header>
+                                            <StackPanel Orientation="Horizontal">
+
+                                                <TextBlock Text="序号"/>
+                                            </StackPanel>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+
+
+                                                    <TextBlock Text="{Binding Num}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="文件名" Width="3*">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding OriginalFileName}" Style="{StaticResource TextBlockNormalStyle}"   VerticalAlignment="Center"/>
+
+                                                    <Image Height="16" Width="24" Visibility="{Binding NewVisibility}" Source="/Resources/探伤分析ICON/new.png" Margin="0 0 0 10"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="学习文件备注" Width="6*" x:Name="DClearnDetail" CellStyle="{StaticResource CellStyleTextLeft}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Remark}" Margin="4 0 0 0" Style="{StaticResource TextBlockNormalStyle}"  VerticalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="原始文件夹" Width="4*" CellStyle="{StaticResource CellStyleTextLeft}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding OriginalFolderName}" Margin="4 0 0 0" Style="{StaticResource TextBlockNormalStyle}"  VerticalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="操作" Width="160">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                    <Button   Content="回放" Style="{StaticResource C75C548Button}" Width="42" Height="28" FontSize="12"  Margin="0,0,6,0" Padding="0" />
+                                                    <Button   Content="对比" Style="{StaticResource C40B3D8Button}"  Width="42" Height="28" FontSize="12"  Margin="0,0,6,0" Padding="0" />
+                                                    <Button   Content="下载" Style="{StaticResource CEE4D4DButton}" Width="42" Height="28" FontSize="12"  Margin="0,0,0,0" Padding="0" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <!--<widget:NoData x:Name="noData"/>-->
                         </Grid>
-                    </Border>
-                    <Border  Margin="0,0,0,0" BorderThickness="0" BorderBrush="#EDEDED">
-                        <StackPanel Orientation="Vertical">
-                            <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" VirtualizingPanel.IsVirtualizing="True">
-                                <Grid>
-                                    <DataGrid Name="FileDataGrid"
-                                              Height="622"
-                                              Width="2310" 
-                                              RowHeaderWidth="0" 
-                                              HeadersVisibility="Column" 
-                                              AreRowDetailsFrozen="True" 
-                                              ItemsSource="{Binding MdlFlawDetectionDataList}"
-                                              Style="{StaticResource DataGridStyle}" 
-                                              ColumnHeaderStyle="{StaticResource ColumnHeaderStyle}"
-                                              RowStyle="{StaticResource RowStyle}" 
-                                              CellStyle="{StaticResource CellStyle}" 
-                                              HorizontalScrollBarVisibility="Disabled">
-                                        <DataGrid.Columns>
-                                            <DataGridTemplateColumn Width="50">
-                                                <DataGridTemplateColumn.Header>
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <CheckBox Name="AllSelectCheckBox"  />
-
-                                                    </StackPanel>
-                                                </DataGridTemplateColumn.Header>
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <CheckBox IsChecked="{Binding IsSelect, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                                        </StackPanel>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTemplateColumn Width="50">
-                                                <DataGridTemplateColumn.Header>
-                                                    <StackPanel Orientation="Horizontal">
-
-                                                        <TextBlock Text="序号"/>
-                                                    </StackPanel>
-                                                </DataGridTemplateColumn.Header>
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <StackPanel Orientation="Horizontal">
+                        <cc:Pagination x:Name="Pagination" Height="32" BorderThickness="0 1 0 0" BorderBrush="#FFABABAB"/>
+                    </StackPanel>
+                </Border>
 
 
-                                                            <TextBlock Text="{Binding Num}"/>
-                                                        </StackPanel>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTemplateColumn Header="文件名" Width="3*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <TextBlock Text="{Binding OriginalFileName}" Style="{StaticResource TextBlockNormalStyle}"   VerticalAlignment="Center"/>
-
-                                                            <Image Height="16" Width="24" Visibility="{Binding NewVisibility}" Source="/Resources/探伤分析ICON/new.png" Margin="0 0 0 10"/>
-                                                        </StackPanel>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTemplateColumn Header="学习文件备注" Width="6*" x:Name="DClearnDetail" CellStyle="{StaticResource CellStyleTextLeft}">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding Remark}" Margin="4 0 0 0" Style="{StaticResource TextBlockNormalStyle}"  VerticalAlignment="Center"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTemplateColumn Header="原始文件夹" Width="4*" CellStyle="{StaticResource CellStyleTextLeft}">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding OriginalFolderName}" Margin="4 0 0 0" Style="{StaticResource TextBlockNormalStyle}"  VerticalAlignment="Center"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTemplateColumn Header="操作" Width="1.8*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                                            <Button   Content="回放" Style="{StaticResource C75C548Button}" Width="42" Height="28" FontSize="12"  Margin="0,0,6,0" Padding="0" />
-                                                            <Button   Content="对比" Style="{StaticResource C40B3D8Button}"  Width="42" Height="28" FontSize="12"  Margin="0,0,6,0" Padding="0" />
-                                                            <Button   Content="下载" Style="{StaticResource CEE4D4DButton}" Width="42" Height="28" FontSize="12"  Margin="0,0,0,0" Padding="0" />
-                                                        </StackPanel>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTemplateColumn Header="工务段" Width="*" Visibility="Collapsed" x:Name="DataGridWorkSection">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding WorkSectionName}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTemplateColumn Header="开始里程" Width="1.1*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding WorkStartMileageName}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="结束里程" Width="1.1*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding WorkEndMileageName}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="线名/车站" Width="*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding RailwayLineName}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="班组" Width="*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding WorkGroup}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="作业开始时间" Width="1.4*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding WorkStartTimeDesc}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="作业结束时间" Width="1.4*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding WorkEndTimeDesc}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="回放时间" Width="1.4*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding ReplayCompletedTime}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="上传时间" Width="1.4*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding UploadTime}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="现场问题数" Width="*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding FlawSiteQuantity}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="伤损数(已查看/总数)" Width="1.5*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                                            <TextBlock Text="{Binding CheckFlawQuantity}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                            <TextBlock Text="/"/>
-                                                            <TextBlock Text="{Binding FlawQuantity}"  Style="{StaticResource TextBlockNormalStyle}"/>
-                                                        </StackPanel>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="复查单数量" Width="*" Visibility="Visible">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding ReviewOrderQuantity}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="负责人" Width="0.8*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding Principal}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="上传人" Width="*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding Uploader}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                            <DataGridTemplateColumn Header="算法版本" Width="0.8*">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <TextBlock Text="{Binding ArithmeticVersion}" Style="{StaticResource TextBlockNormalStyle}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                    <!--<widget:NoData x:Name="noData"/>-->
-                                </Grid>
-                            </ScrollViewer>
-                            <cc:Pagination x:Name="Pagination" Height="32" BorderThickness="0 1 0 0" BorderBrush="#FFABABAB"/>
-                        </StackPanel>
-                    </Border>
-                </StackPanel>
-            </Border>
-
-        </Grid>
+            </Grid>
+        </ScrollViewer>
+  
     </Border>
 </Page>

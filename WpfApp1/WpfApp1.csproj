@@ -228,8 +228,8 @@
     <Compile Include="window\Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="window\Views\Task\Task.xaml.cs">
-      <DependentUpon>Task.xaml</DependentUpon>
+    <Compile Include="window\Views\TaskOrder\TaskOrder.xaml.cs">
+      <DependentUpon>TaskOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="window\Views\UI\BaseUI.xaml.cs">
       <DependentUpon>BaseUI.xaml</DependentUpon>
@@ -298,7 +298,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="window\Views\Task\Task.xaml">
+    <Page Include="window\Views\TaskOrder\TaskOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

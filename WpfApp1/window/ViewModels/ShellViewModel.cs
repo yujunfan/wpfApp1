@@ -5,7 +5,7 @@ using MahAppsMetroHamburgerMenuNavigation.Mvvm;
 using WpfApp1.window.Views.UI;
 using WpfApp1.window.Views.Device;
 using WpfApp1.window.Views.File;
-using WpfApp1.window.Views.Task;
+using WpfApp1.window.Views.TaskOrder;
 
 namespace WpfApp1.window.ViewModels
 {
@@ -35,8 +35,8 @@ namespace WpfApp1.window.ViewModels
             {
                 Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.TasksSolid },
                 Label = "任务管理",
-                NavigationType = typeof(Task),
-                NavigationDestination = new Uri("window/Views/Task/Task.xaml", UriKind.RelativeOrAbsolute)
+                NavigationType = typeof(TaskOrder),
+                NavigationDestination = new Uri("window/Views/TaskOrder/TaskOrder.xaml", UriKind.RelativeOrAbsolute)
             });
 
 

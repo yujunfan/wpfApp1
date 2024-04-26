@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.window.Views.Device;
 
 namespace WpfApp1.window.CommonControl
 {
@@ -32,17 +33,28 @@ namespace WpfApp1.window.CommonControl
         {
             if (Global.CarConnection.Connected)
             {
-                carText.Text = "小车已连接";
-                carImage.Source = new BitmapImage(new Uri("/Resources/Common/active_car.png", UriKind.Relative));
-                carButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B61D"));
+                this.Dispatcher.Invoke(() =>
+                {
+                    carText.Text = "小车已连接";
+                    carImage.Source = new BitmapImage(new Uri("/Resources/Common/active_car.png", UriKind.Relative));
+                    carButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B61D"));
+                });
+
+
+
 
 
             }
             else
             {
-                carText.Text = "小车未连接";
-                carImage.Source = new BitmapImage(new Uri("/Resources/Common/unactive_car.png", UriKind.Relative));
-                carButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C3C3C3"));
+                this.Dispatcher.Invoke(() =>
+                {
+                    carText.Text = "小车未连接";
+                    carImage.Source = new BitmapImage(new Uri("/Resources/Common/unactive_car.png", UriKind.Relative));
+                    carButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C3C3C3"));
+                });
+
+            
             }
         }
 
@@ -51,16 +63,24 @@ namespace WpfApp1.window.CommonControl
 
             if (Global.PrinterConnection.Connected)
             {
-                printerText.Text = "打印机已连接";
-                printerImage.Source = new BitmapImage(new Uri("/Resources/Common/active_printer.png", UriKind.Relative));
-                printerButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B61D"));
+                this.Dispatcher.Invoke(() =>
+                {
+                    printerText.Text = "打印机已连接";
+                    printerImage.Source = new BitmapImage(new Uri("/Resources/Common/active_printer.png", UriKind.Relative));
+                    printerButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B61D"));
+                });
+
 
             }
             else
             {
-                printerText.Text = "打印机未连接";
-                printerImage.Source = new BitmapImage(new Uri("/Resources/Common/unactive_printer.png", UriKind.Relative));
-                printerButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C3C3C3"));
+                this.Dispatcher.Invoke(() =>
+                {
+                    printerText.Text = "打印机未连接";
+                    printerImage.Source = new BitmapImage(new Uri("/Resources/Common/unactive_printer.png", UriKind.Relative));
+                    printerButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C3C3C3"));
+                });
+
             }
         }
 
@@ -68,15 +88,23 @@ namespace WpfApp1.window.CommonControl
         {
             if (Global.ZJClientConnection.Opened)
             {
-                zjText.Text = "仲景已连接";
-                zjImage.Source = new BitmapImage(new Uri("/Resources/Common/active_zj.png", UriKind.Relative));
-                zjButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B61D"));
+                this.Dispatcher.Invoke(() =>
+                {
+                    zjText.Text = "仲景已连接";
+                    zjImage.Source = new BitmapImage(new Uri("/Resources/Common/active_zj.png", UriKind.Relative));
+                    zjButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B61D"));
+                });
+
             }
             else
             {
-                zjText.Text = "仲景未连接";
-                zjImage.Source = new BitmapImage(new Uri("/Resources/Common/unactive_zj.png", UriKind.Relative));
-                zjButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C3C3C3"));
+                this.Dispatcher.Invoke(() =>
+                {
+                    zjText.Text = "仲景未连接";
+                    zjImage.Source = new BitmapImage(new Uri("/Resources/Common/unactive_zj.png", UriKind.Relative));
+                    zjButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C3C3C3"));
+                });
+                
             }
         }
     }

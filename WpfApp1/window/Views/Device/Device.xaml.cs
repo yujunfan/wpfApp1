@@ -196,7 +196,7 @@ namespace WpfApp1.window.Views.Device
 
 
         /// <summary>
-        /// 获取蓝牙设备列表
+        /// 搜索蓝牙设备列表
         /// </summary>
 
         private async void GetBlueToothData()
@@ -211,7 +211,7 @@ namespace WpfApp1.window.Views.Device
                 foreach (BluetoothDeviceInfo deviceInfo in discoveredDevices)
                 {
                     // 在 UI 线程上更新集合
-                    Application.Current.Dispatcher.Invoke(() =>
+                    this.Dispatcher.Invoke(() =>
                     {
                         _devices.Add(deviceInfo);
                     });
@@ -223,7 +223,7 @@ namespace WpfApp1.window.Views.Device
 
 
         /// <summary>
-        /// 获取蓝牙设备列表
+        /// 获取串口列表
         /// </summary>
 
         private async void GetSerialPortData()
@@ -279,7 +279,7 @@ namespace WpfApp1.window.Views.Device
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CarConnect(Button btn, BluetoothDeviceInfo info)
+        private async void CarConnect(Button btn, BluetoothDeviceInfo info)
         {
             if (info.Connected)
             {
@@ -287,59 +287,20 @@ namespace WpfApp1.window.Views.Device
             }
             try
             {
-                client.Connect(info.DeviceAddress, BluetoothService.SerialPort);
-                Global.CarConnection.Connected = true;
+
+                await Task.Run(() =>
+                  {
+                      client.Connect(info.DeviceAddress, BluetoothService.SerialPort);
+                      Global.CarConnection.Connected = true;
+                  });
+
+
             }
             catch (IOException ex)
             {
                 // 连接异常
                 Console.WriteLine($"Connection error: {ex.Message}");
                 Global.CarConnection.Connected = false;
-            }
-
-
-
-            if (client.Connected)
-            {
-                Console.WriteLine("Connected to device.");
-
-                // 打开端口并监听数据传输
-                Stream stream = client.GetStream();
-                byte[] buffer = new byte[1024];
-                int bytesRead;
-
-                try
-                {
-                    while (true)
-                    {
-                        // 读取数据
-                        bytesRead = stream.Read(buffer, 0, buffer.Length);
-                        if (bytesRead == 0)
-                        {
-                            // 连接已断开
-                            Console.WriteLine("Connection closed by remote device.");
-                            break;
-                        }
-                        string data = System.Text.Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                        Console.WriteLine($"Received data: {data}");
-                    }
-                }
-                catch (IOException ex)
-                {
-                    // 连接异常
-                    Console.WriteLine($"Connection error: {ex.Message}");
-                }
-                finally
-                {
-                    // 关闭连接
-                    client.Close();
-                }
-
-
-            }
-            else
-            {
- 
             }
         }
 
@@ -357,12 +318,12 @@ namespace WpfApp1.window.Views.Device
         {
             Button btn = (Button)sender;
             BluetoothDeviceInfo info = btn.DataContext as BluetoothDeviceInfo;
-            if(info.ClassOfDevice.MajorDevice == DeviceClass.Phone)
+            if (info.ClassOfDevice.MajorDevice == DeviceClass.Phone)
             {
                 CarConnect(btn, info);
             }
 
-            if(info.ClassOfDevice.MajorDevice == DeviceClass.AudioVideoUnclassified)
+            if (info.ClassOfDevice.MajorDevice == DeviceClass.AudioVideoUnclassified)
             {
                 PrinterConnect(btn, info);
             }
